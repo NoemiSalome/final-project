@@ -6,7 +6,8 @@
   
   body {
     margin: 0;
-    font-family: 'Noto', monospace;
+    /* font-family: 'Abril Fatface', cursive; */
+    /* font-family: 'Cormorant', serif; */
     background: pink;
     display: flex;
     justify-content: center;
