@@ -31,6 +31,7 @@ const NavigationLink = styled.a`
 `
 
 const Header = () => {
+
   return (
     <HeaderContainer>
       <Title>ANINA SCHMID.</Title> 
@@ -42,7 +43,6 @@ const Header = () => {
       </NavigationContainer>
     </HeaderContainer>
     )
-
 }
 
 export default Header
