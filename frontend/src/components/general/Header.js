@@ -8,6 +8,7 @@ const HeaderContainer = styled.header`
   width: 100vw;
   height: 40px;
   padding: 0 3px;
+  margin-bottom: 15px
 `
 
 const HeaderTitle = styled.h1`

@@ -3,7 +3,7 @@ import styled from 'styled-components/macro'
 
 import Header from 'components/general/Header'
 
-const HomeContainer = styled.div`
+const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -33,14 +33,14 @@ const Home = () => {
   return (
     <>
     <Header />
-      <HomeContainer>
+      <MainContainer>
         <HomeTitle>HOW</HomeTitle>
         <HomeSubTitleContainer>
           <HomeSubTitle>i got to know the world of architecture</HomeSubTitle>
           <HomeSubTitle>i got through three year of design studies</HomeSubTitle>
           <HomeSubTitle>i got prepared for the next step</HomeSubTitle>
         </HomeSubTitleContainer>
-      </HomeContainer>
+      </MainContainer>
     </>
   )
 }
