@@ -32,7 +32,7 @@ const Home = () => {
 
   return (
     <>
-    <Header />
+      <Header />
       <MainContainer>
         <HomeTitle>HOW</HomeTitle>
         <HomeSubTitleContainer>

@@ -11,9 +11,9 @@ export const App = () => {
     <div>
       {/* <Header /> */}
       {/* <Home /> */}
-      <Projects />
+      {/* <Projects /> */}
       {/* <About /> */}
-      {/* <Contact /> */} 
+      <Contact /> 
     </div>
   )
 }
