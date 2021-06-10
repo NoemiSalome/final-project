@@ -10,7 +10,7 @@ const HeaderContainer = styled.header`
   padding: 0 3px;
 `
 
-const Title = styled.h1`
+const HeaderTitle = styled.h1`
   font-family: 'Abril Fatface', cursive;
   font-size: 20px;
 `
@@ -34,7 +34,7 @@ const Header = () => {
 
   return (
     <HeaderContainer>
-      <Title>ANINA SCHMID.</Title> 
+      <HeaderTitle>ANINA SCHMID.</HeaderTitle> 
       <NavigationContainer>
         <NavigationLink href="">home</NavigationLink>
         <NavigationLink href="">projects</NavigationLink>
