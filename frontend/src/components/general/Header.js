@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components/macro'
+import { NavLink } from 'react-router-dom'
 
 const HeaderContainer = styled.header`
   display: flex;
@@ -23,7 +24,7 @@ const NavigationContainer = styled.nav`
   font-size: 14px;
 `
 
-const NavigationLink = styled.a`
+const Navigation = styled.div`
   font-family: 'Abril Fatface', cursive;
   font-size: 13px;
   margin-left: 5px;
@@ -37,10 +38,20 @@ const Header = () => {
     <HeaderContainer>
       <HeaderTitle>ANINA SCHMID.</HeaderTitle> 
       <NavigationContainer>
-        <NavigationLink href="">home</NavigationLink>
-        <NavigationLink href="">projects</NavigationLink>
-        <NavigationLink href="">about</NavigationLink>
-        <NavigationLink href="">contact</NavigationLink>
+        <Navigation>
+          <NavLink to="/" exact>
+            home
+          </NavLink>
+        </Navigation>
+        <Navigation>
+          <NavLink to="/projects">projects</NavLink>
+        </Navigation>
+        <Navigation>
+          <NavLink to="/about">about</NavLink>
+        </Navigation>
+        <Navigation>
+          <NavLink to="/contact">contact</NavLink>
+        </Navigation>
       </NavigationContainer>
     </HeaderContainer>
     )
