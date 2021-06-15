@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components/macro'
+import sanityClient from '../client.js'
 
 import Header from 'components/general/Header'
 
@@ -18,7 +20,7 @@ const ProjectsTimelineContainer = styled.div`
   width: 45%;
 `
 
-const Project = styled.div`
+const ProjectContainer = styled.div`
   display: flex;
   justify-content: flex-end;
   height: 30px;
@@ -40,7 +42,25 @@ const ProjectImagesContainer = styled.div`
   width: 45%;
 `
 
-const Projects = () => {
+const Project = () => {
+  const [projectData, setProject] = useState(null)
+
+  useEffect(() => {
+    sanityClient
+      .fetch(`*[_type == 'project'] {
+        title,
+        slug,
+        mainImage{
+          asset->{
+            _id,
+            url
+          },
+          alt
+        }
+      }`)
+      .then((data) => setProject(data))
+      .catch(console.error)
+  }, [])
 
   return (
     <>
@@ -48,18 +68,12 @@ const Projects = () => {
       <MainContainer>
         <VerticalLine></VerticalLine>
         <ProjectsTimelineContainer>
-          <Project>
-            <ProjectLine></ProjectLine>
-            <ProjectTitle>Lorem ipsum</ProjectTitle>
-          </Project>  
-          <Project>
-            <ProjectLine></ProjectLine>
-            <ProjectTitle>Lorem</ProjectTitle>
-          </Project>    
-          <Project>
-            <ProjectLine></ProjectLine>
-            <ProjectTitle>ipsum</ProjectTitle>
-          </Project>    
+          <ProjectContainer>
+            {/* <Proje'ctLine></ProjectLine> */}
+            <Link to={'/project/' + project.slug.current} key={project.slug.current}>
+              <ProjectTitle>Lorem ipsum</ProjectTitle>
+            </Link>
+          </ProjectContainer>  
         </ProjectsTimelineContainer>
         <ProjectImagesContainer>
           
@@ -69,4 +83,4 @@ const Projects = () => {
   )
 }
 
-export default Projects
+export default Project
