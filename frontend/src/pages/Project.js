@@ -70,9 +70,9 @@ const Project = () => {
         <ProjectsTimelineContainer>
           <ProjectContainer>
             {/* <Proje'ctLine></ProjectLine> */}
-            <Link to={'/project/' + project.slug.current} key={project.slug.current}>
+            {/* <Link to={'/project/' + project.slug.current} key={project.slug.current}>
               <ProjectTitle>Lorem ipsum</ProjectTitle>
-            </Link>
+            </Link> */}
           </ProjectContainer>  
         </ProjectsTimelineContainer>
         <ProjectImagesContainer>
