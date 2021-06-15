@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import styled from 'styled-components/macro'
 import sanityClient from '../client.js'
 
@@ -9,15 +9,6 @@ const MainContainer = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 70px
-`
-
-const VerticalLine = styled.div`
-  border-left: 1px solid black;
-  heigth: 100%
-`
-
-const ProjectsTimelineContainer = styled.div`
-  width: 45%;
 `
 
 const ProjectContainer = styled.div`
@@ -43,22 +34,16 @@ const ProjectImagesContainer = styled.div`
 `
 
 const Project = () => {
-  const [projectData, setProject] = useState(null)
+  const [projectData, setProjectData] = useState(null)
 
   useEffect(() => {
     sanityClient
-      .fetch(`*[_type == 'project'] {
-        title,
-        slug,
-        mainImage{
-          asset->{
-            _id,
-            url
-          },
-          alt
-        }
+      .fetch(
+        `*[_type == 'project'] {
+          title,
+          slug,
       }`)
-      .then((data) => setProject(data))
+      .then((data) => setProjectData(data))
       .catch(console.error)
   }, [])
 
@@ -66,17 +51,19 @@ const Project = () => {
     <>
       <Header />
       <MainContainer>
-        <VerticalLine></VerticalLine>
-        <ProjectsTimelineContainer>
-          <ProjectContainer>
-            {/* <Proje'ctLine></ProjectLine> */}
-            {/* <Link to={'/project/' + project.slug.current} key={project.slug.current}>
-              <ProjectTitle>Lorem ipsum</ProjectTitle>
-            </Link> */}
-          </ProjectContainer>  
-        </ProjectsTimelineContainer>
+        {projectData && 
+          projectData.map((project, index) => (
+            <ProjectContainer>
+              <ProjectLine></ProjectLine>
+
+              {/* <Link to={'/projects/' + project.slug.current} key={project.slug.current}> */}
+                <ProjectTitle>{project.title}</ProjectTitle>
+              {/* </Link> */}
+            </ProjectContainer>
+        ))}  
+
+
         <ProjectImagesContainer>
-          
         </ProjectImagesContainer>
       </MainContainer>
     </>
