@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components/macro'
+
+import sanityClient from '../client'
 
 import Header from 'components/general/Header'
 
@@ -11,13 +13,26 @@ const MainContainer = styled.div`
   margin: 0 10px;
 `
 
-const Contact = () => {
 
+const Contact = () => {
+  const [contactData, setContactData] = useState([])
+
+  useEffect(() => {
+    sanityClient
+      .fetch(
+        `*[_type == 'contact]{
+          email,
+          phone
+        }`
+      )
+      .then((data) => setContactData(data))
+      .catch(console.error)
+  })
   return (
     <>
       <Header />
       <MainContainer>
-        Contact
+        {contactData.email}
       </MainContainer>
     </>
   )

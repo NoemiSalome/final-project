@@ -57,16 +57,5 @@ export default {
       title: 'Project size BIG',
       type: 'boolean'
     }
-  ],
-
-  preview: {
-    select: {
-      title: 'title',
-      media: 'mainImage',
-    },
-    prepare(selection) {
-      return Object.assign({}, selection,
-      )
-    },
-  },
+  ]
 }

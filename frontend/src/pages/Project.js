@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 // import { Link } from 'react-router-dom'
 import styled from 'styled-components/macro'
-import sanityClient from '../client.js'
 
+import sanityClient from '../client.js'
 import Header from 'components/general/Header'
 
 const MainContainer = styled.div`
@@ -47,12 +47,13 @@ const Project = () => {
       .catch(console.error)
   }, [])
 
+
   return (
     <>
       <Header />
       <MainContainer>
         {projectData && 
-          projectData.map((project, index) => (
+          projectData.map((project) => (
             <ProjectContainer>
               <ProjectLine></ProjectLine>
 

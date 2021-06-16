@@ -4,27 +4,13 @@ export default {
   type: 'document',
   fields: [
     {
-      name: 'title',
-      title: 'Title',
-      type: 'string',
-    },
-    {
-      name: 'slug',
-      title: 'Slug',
-      type: 'slug',
-      options: {
-        source: 'title',
-        maxLength: 96,
-      },
-    },
-    {
       name: 'email',
       title: 'Email',
       type: 'string'
     },
     {
       name: 'phone',
-      title: 'Phone',
+      title: 'Phone number',
       type: 'string'
     },
   ],
