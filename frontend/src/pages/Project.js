@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components/macro'
 
 import sanityClient from '../client.js'
@@ -28,14 +28,11 @@ const Project = () => {
           projectData.map((project) => (
             <ProjectContainer>
               <ProjectLine></ProjectLine>
-
-              {/* <Link to={'/projects/' + project.slug.current} key={project.slug.current}> */}
+              <Link to={'/projects/' + project.slug.current} key={project.slug.current}>
                 <ProjectTitle>{project.title}</ProjectTitle>
-              {/* </Link> */}
+              </Link>
             </ProjectContainer>
         ))}  
-
-
         <ProjectImagesContainer>
         </ProjectImagesContainer>
       </MainContainer>

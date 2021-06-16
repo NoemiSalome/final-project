@@ -5,29 +5,29 @@ import sanityClient from '../client.js'
 import Header from 'components/general/Header'
 
 const About = () => {
-  
-    const [aboutInformation, setAboutInformation] = useState([])
-  
-    useEffect(() => {
-      sanityClient
-        .fetch(
-          `*[_type == 'about'] {
-            aboutText,
-            images
-        }`)
-        .then((data) => setAboutInformation(data))
-        .catch(console.error)
-    }, [])
+  const [aboutInformation, setAboutInformation] = useState([])
 
- 
+  useEffect(() => {
+    sanityClient
+      .fetch(
+        `*[_type == 'about'] {
+          aboutText,
+          images
+      }`)
+      .then((data) => setAboutInformation(data))
+      .catch(console.error)
+  })
 
   return (
     <>
       <Header />
       <MainContainer>
-        <AboutText>
-          {aboutInformation.aboutText}
-        </AboutText>
+        {aboutInformation.aboutText && (
+          <AboutText>
+            {aboutInformation.aboutText}
+          </AboutText>
+        )}
+       
         <div>
           {aboutInformation.images}
         </div>

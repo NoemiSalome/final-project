@@ -11,19 +11,19 @@ const Contact = () => {
   useEffect(() => {
     sanityClient
       .fetch(
-        `*[_type == 'contact]{
+        `*[_type == 'contact'] {
           email,
-          phone
+          phone,
         }`
       )
       .then((data) => setContactData(data))
       .catch(console.error)
-  })
+  }, [])
   return (
     <>
       <Header />
       <MainContainer>
-        {contactData.email}
+        {contactData.email && <div>{contactData.email}</div>}
       </MainContainer>
     </>
   )
