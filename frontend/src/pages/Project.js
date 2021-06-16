@@ -5,34 +5,6 @@ import styled from 'styled-components/macro'
 import sanityClient from '../client.js'
 import Header from 'components/general/Header'
 
-const MainContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  margin-top: 70px
-`
-
-const ProjectContainer = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  height: 30px;
-`
-
-const ProjectLine = styled.div`
-  border-bottom: 1px solid black;
-  width: 100%
-`
-
-const ProjectTitle = styled.h2`
-  font-family: 'Cormorant', serif;
-  font-size: 12px;
-  text-align: start;
-  width: 100%
-`
-
-const ProjectImagesContainer = styled.div`
-  width: 45%;
-`
-
 const Project = () => {
   const [projectData, setProjectData] = useState(null)
 
@@ -70,5 +42,33 @@ const Project = () => {
     </>
   )
 }
+
+const MainContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 70px
+`
+
+const ProjectContainer = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  height: 30px;
+`
+
+const ProjectLine = styled.div`
+  border-bottom: 1px solid black;
+  width: 100%
+`
+
+const ProjectTitle = styled.h2`
+  font-family: 'Cormorant', serif;
+  font-size: 12px;
+  text-align: start;
+  width: 100%
+`
+
+const ProjectImagesContainer = styled.div`
+  width: 45%;
+`
 
 export default Project

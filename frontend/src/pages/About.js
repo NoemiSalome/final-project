@@ -4,21 +4,6 @@ import styled from 'styled-components/macro'
 import sanityClient from '../client.js'
 import Header from 'components/general/Header'
 
-const MainContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 80vh;
-  margin: 0 10px;
-`
-
-const AboutText = styled.p`
-  font-family: 'Cormorant', serif;
-  font-size: 12px;
-  text-align: justify;
-  width: 50%
-`
-
 const About = () => {
   
     const [aboutInformation, setAboutInformation] = useState([])
@@ -50,5 +35,20 @@ const About = () => {
     </>
   )
 }
+
+const MainContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 80vh;
+  margin: 0 10px;
+`
+
+const AboutText = styled.p`
+  font-family: 'Cormorant', serif;
+  font-size: 12px;
+  text-align: justify;
+  width: 50%
+`
 
 export default About
