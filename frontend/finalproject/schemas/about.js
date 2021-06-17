@@ -27,9 +27,9 @@ export default {
           }
         },
         {
-          name: 'attribution',
+          name: 'alt',
           type: 'string',
-          title: 'Attribution',
+          title: 'Alternitive text',
         }
       ]
     },
