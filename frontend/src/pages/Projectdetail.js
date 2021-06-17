@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
+import sanityClient from '../client'
 import Header from 'components/general/Header'
 
 const ProjectDetail = () => {

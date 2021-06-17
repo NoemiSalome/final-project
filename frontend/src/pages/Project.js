@@ -26,9 +26,9 @@ const Project = () => {
       <MainContainer>
         {projectData && 
           projectData.map((project) => (
-            <ProjectContainer>
+            <ProjectContainer key={project.slug.current}>
               <ProjectLine></ProjectLine>
-              <Link to={'/projects/' + project.slug.current} key={project.slug.current}>
+              <Link to={'/projects/' + project.slug.current} >
                 <ProjectTitle>{project.title}</ProjectTitle>
               </Link>
             </ProjectContainer>

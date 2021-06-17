@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components/macro'
 
 import sanityClient from '../client'
-
 import Header from 'components/general/Header'
 
 const Contact = () => {
@@ -16,14 +15,15 @@ const Contact = () => {
           phone,
         }`
       )
-      .then((data) => setContactData(data))
+      .then((data) => setContactData(data[0]))
       .catch(console.error)
   }, [])
   return (
     <>
       <Header />
       <MainContainer>
-        {contactData.email && <div>{contactData.email}</div>}
+        {contactData.email && (<div>{contactData.email}</div>)}
+        {contactData.phone && (<div>{contactData.phone}</div>)}
       </MainContainer>
     </>
   )

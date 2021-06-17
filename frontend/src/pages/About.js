@@ -16,7 +16,7 @@ const About = () => {
       }`)
       .then((data) => setAboutInformation(data))
       .catch(console.error)
-  })
+  }, [])
 
   return (
     <>
