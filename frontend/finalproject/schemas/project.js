@@ -40,12 +40,30 @@ export default {
     },
     {
       name: 'images',
-      title: 'Images',
       type: 'array',
-      of: [{type: 'image'},],
-      options: {
-        hotspot: true,
-      },
+      title: 'Images',
+      of: [
+        { name: 'images',
+          type: 'image',
+          title: 'Image',
+          options: {
+            hotspot: true,
+          },
+          fields: [
+            {
+              name: 'alt',
+              type: 'string',
+              title: 'Alternative text',
+              description: 'Please enter a description for the image for screenreaders - thanks and cheers.'
+            },        
+            {
+              name: 'caption',
+              type: 'string',
+              title: 'Description of the image (shown when hover over it)',
+            },
+          ]
+        },
+      ],
     },
     {
       name: 'DateOfCompletion',
