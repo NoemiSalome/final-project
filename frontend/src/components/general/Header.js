@@ -2,6 +2,29 @@ import React from 'react'
 import styled from 'styled-components/macro'
 import { NavLink } from 'react-router-dom'
 
+const Header = () => {
+
+  return (
+    <HeaderContainer>
+      <HeaderTitle>ANINA SCHMID.</HeaderTitle> 
+      <NavigationContainer>
+        <Navigation>
+          <NavLink to="/" exact>home</NavLink>
+        </Navigation>
+        <Navigation>
+          <NavLink to="/projects">projects</NavLink>
+        </Navigation>
+        <Navigation>
+          <NavLink to="/about">about</NavLink>
+        </Navigation>
+        <Navigation>
+          <NavLink to="/contact">contact</NavLink>
+        </Navigation>
+      </NavigationContainer>
+    </HeaderContainer>
+    )
+}
+
 const HeaderContainer = styled.header`
   display: flex;
   justify-content: space-between;
@@ -31,30 +54,5 @@ const Navigation = styled.div`
   text-decoration: none;
   color: black;
 `
-
-const Header = () => {
-
-  return (
-    <HeaderContainer>
-      <HeaderTitle>ANINA SCHMID.</HeaderTitle> 
-      <NavigationContainer>
-        <Navigation>
-          <NavLink to="/" exact>
-            home
-          </NavLink>
-        </Navigation>
-        <Navigation>
-          <NavLink to="/projects">projects</NavLink>
-        </Navigation>
-        <Navigation>
-          <NavLink to="/about">about</NavLink>
-        </Navigation>
-        <Navigation>
-          <NavLink to="/contact">contact</NavLink>
-        </Navigation>
-      </NavigationContainer>
-    </HeaderContainer>
-    )
-}
 
 export default Header

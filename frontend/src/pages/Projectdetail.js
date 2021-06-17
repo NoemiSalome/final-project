@@ -12,7 +12,7 @@ function urlFor(source) {
 }
 
 const ProjectDetail = () => {
-  const [projectDetail, setProjectDetail] = useState(null)
+  const [projectDetail, setProjectDetail] = useState([])
   const { slug } = useParams()
 
   useEffect(() => {

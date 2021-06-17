@@ -12,8 +12,8 @@ export const App = () => {
     <BrowserRouter>
       <Switch>
         <Route component={Home} path='/' exact />
-        <Route component={Project} path='/projects' />
         <Route component={ProjectDetail} path='/projects/:slug' />
+        <Route component={Project} path='/projects' />
         <Route component={About} path='/about' />
         <Route component={Contact} path='/contact' />
       </Switch>
