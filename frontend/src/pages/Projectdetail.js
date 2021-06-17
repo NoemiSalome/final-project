@@ -24,7 +24,7 @@ const ProjectDetail = () => {
             slug,
             images{
               asset->{
-                _id
+                _id,
                 url
               }
             }
@@ -33,13 +33,16 @@ const ProjectDetail = () => {
   .catch(console.error)
 }, [slug])
 
-if (!ProjectDetail) return <div>loading</div>
+    if (!ProjectDetail) 
+      return <div>loading</div>
 
     return (
         <>
           <Header />
           <MainContainer>
-            {projectDetail.title}
+
+              <p>{projectDetail.title}</p>
+
             <img
               src={urlFor(projectDetail.images).url()}
               alt={projectDetail.title}

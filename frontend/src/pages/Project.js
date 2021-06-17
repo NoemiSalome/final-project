@@ -20,7 +20,6 @@ const Project = () => {
       .catch(console.error)
   }, [])
 
-
   return (
     <>
       <Header />

@@ -21,7 +21,7 @@ export default {
         {
           name: 'alt',
           type: 'string',
-          title: 'Please enter a description for the image for screenreaders - thanks and cheers.',
+          title: 'Please enter a description for the image for screenreaders - thanks and cheers (no blank spaces - use (- and _ instead)',
         }
       ]
     },

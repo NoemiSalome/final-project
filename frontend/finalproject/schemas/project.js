@@ -54,12 +54,17 @@ export default {
               name: 'alt',
               type: 'string',
               title: 'Alternative text',
-              description: 'Please enter a description for the image for screenreaders - thanks and cheers.'
+              description: 'Please enter a description for the image for screenreaders - thanks and cheers (no blank spaces - use (- and _ instead)'
             },        
             {
-              name: 'caption',
+              name: 'title',
               type: 'string',
-              title: 'Description of the image (shown when hover over it)',
+              title: 'Title of the image',
+            },
+            {
+              name: 'description',
+              type: 'string',
+              title: 'Description of the image',
             },
           ]
         },
