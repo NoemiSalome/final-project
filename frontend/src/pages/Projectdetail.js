@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import styled from 'styled-components/macro'
 import imageUrlBuilder from '@sanity/image-url'
+import BlockContent from '@sanity/block-content-to-react'
 
 import sanityClient from '../client.js'
 import Header from 'components/general/Header'
@@ -18,13 +19,17 @@ const ProjectDetail = () => {
   useEffect(() => {
     sanityClient
       .fetch(
-        `*[slug.current == '${slug}']{
+        `*[slug.current == '${slug}'] {
             title,
-            _id,
+            semester,
+            studio,
+            description,
             slug,
-            images{
+            'images': images [] {
+              alt,
+              _ref,
               asset->{
-                _id,
+                _type,
                 url
               }
             }
@@ -40,13 +45,24 @@ const ProjectDetail = () => {
         <>
           <Header />
           <MainContainer>
+          <div>{projectDetail.title}</div>
+          <div>{projectDetail.semester}</div>
+          <div>{projectDetail.studio}</div>
+          <BlockContent blocks={projectDetail.description} />
+ 
+          
+{/*      
+          {projectDetail &&
+            projectDetail.map((project) => (
+                <p>{project.description}</p>
+            ))} */}
 
-              <p>{projectDetail.title}</p>
 
-            <img
-              src={urlFor(projectDetail.images).url()}
-              alt={projectDetail.title}
-            />
+
+
+
+
+
           </MainContainer>
         </>
       )
