@@ -41,11 +41,9 @@ const About = () => {
           height='150px'
           width='120px'
         />
-        {aboutInformation.aboutText && (
-          <AboutText>
-            {aboutInformation.aboutText}
-          </AboutText>
-        )}
+        <AboutText>
+          {aboutInformation.aboutText}
+        </AboutText>
       </MainContainer>
     </>
   )

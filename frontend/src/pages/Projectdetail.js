@@ -17,6 +17,7 @@ const ProjectDetail = () => {
   const { slug } = useParams()
 
   useEffect(() => {
+  
     sanityClient
       .fetch(
         `*[slug.current == '${slug}'] {
@@ -24,12 +25,10 @@ const ProjectDetail = () => {
             semester,
             studio,
             description,
-            slug,
+            learnings,
             'images': images [] {
               alt,
-              _ref,
               asset->{
-                _type,
                 url
               }
             }
@@ -40,29 +39,34 @@ const ProjectDetail = () => {
 
     if (!ProjectDetail) 
       return <div>loading</div>
+      
 
     return (
         <>
           <Header />
           <MainContainer>
-          <div>{projectDetail.title}</div>
-          <div>{projectDetail.semester}</div>
-          <div>{projectDetail.studio}</div>
-          <BlockContent blocks={projectDetail.description} />
- 
-          
-{/*      
-          {projectDetail &&
-            projectDetail.map((project) => (
-                <p>{project.description}</p>
-            ))} */}
-
-
-
-
-
-
-
+            <div>{projectDetail.title}</div>
+            <div>{projectDetail.semester}</div>
+            <div>{projectDetail.studio}</div>
+            <BlockContent blocks={projectDetail.description} />
+            <div>
+              {projectDetail.learnings && projectDetail.learnings.map((learning) => (
+                <div>{learning}</div>
+              ))}
+              </div>
+            <div>
+              {projectDetail.images && projectDetail.images.map((image) => (
+                <div key={image.index}>
+                  <img 
+                    src={urlFor(image).url()}
+                    alt={image.alt}
+                    height='150px'
+                    width='120px'
+                  />
+                </div>
+                ))}
+            </div>
+         
           </MainContainer>
         </>
       )

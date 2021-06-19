@@ -1,10 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-
 import styled from 'styled-components/macro'
+import imageUrlBuilder from '@sanity/image-url'
 
 import sanityClient from '../client.js'
 import Header from 'components/general/Header'
+
+const builder = imageUrlBuilder(sanityClient)
+function urlFor(source) {
+  return builder.image(source)
+}
 
 const Project = () => {
   const [projectData, setProjectData] = useState(null)
@@ -15,6 +20,12 @@ const Project = () => {
         `*[_type == 'project'] {
           title,
           slug,
+          'images': images [] {
+            alt,
+            asset->{
+              url
+            }
+          }
       }`)
       .then((data) => setProjectData(data))
       .catch(console.error)
@@ -30,6 +41,18 @@ const Project = () => {
               <ProjectLine></ProjectLine>
               <Link to={'/projects/' + project.slug.current} >
                 <ProjectTitle>{project.title}</ProjectTitle>
+                <div>
+              {project.images && project.images.map((image) => (
+                <div key={image.index}>
+                  <img 
+                    src={urlFor(image).url()}
+                    alt={image.alt}
+                    height='150px'
+                    width='120px'
+                  />
+                </div>
+                ))}
+            </div>
               </Link>
             </ProjectContainer>
         ))}  
