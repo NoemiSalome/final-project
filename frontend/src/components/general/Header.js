@@ -9,16 +9,16 @@ const Header = () => {
       <HeaderTitle>ANINA SCHMID.</HeaderTitle> 
       <NavigationContainer>
         <Navigation>
-          <NavLink to="/" exact>home</NavLink>
+          <Link to="/" exact>home</Link>
         </Navigation>
         <Navigation>
-          <NavLink to="/projects">projects</NavLink>
+          <Link to="/projects">projects</Link>
         </Navigation>
         <Navigation>
-          <NavLink to="/about">about</NavLink>
+          <Link to="/about">about</Link>
         </Navigation>
         <Navigation>
-          <NavLink to="/contact">contact</NavLink>
+          <Link to="/contact">contact</Link>
         </Navigation>
       </NavigationContainer>
     </HeaderContainer>
@@ -32,7 +32,7 @@ const HeaderContainer = styled.header`
   width: 100vw;
   height: 40px;
   padding: 0 3px;
-  margin-bottom: 15px
+  margin-bottom: 30px
 `
 
 const HeaderTitle = styled.h1`
@@ -53,6 +53,10 @@ const Navigation = styled.div`
   margin-left: 5px;
   text-decoration: none;
   color: black;
+`
+const Link = styled(NavLink)`
+  color: black;
+  text-decoration: none;
 `
 
 export default Header

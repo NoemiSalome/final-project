@@ -37,58 +37,73 @@ const Project = () => {
       <MainContainer>
         {projectData && 
           projectData.map((project) => (
-            <ProjectContainer key={project.slug.current}>
-              <ProjectLine></ProjectLine>
-              <Link to={'/projects/' + project.slug.current} >
-                <ProjectTitle>{project.title}</ProjectTitle>
-                <div>
-              {project.images && project.images.map((image) => (
-                <div key={image.index}>
-                  <img 
-                    src={urlFor(image).url()}
-                    alt={image.alt}
-                    height='150px'
-                    width='120px'
-                  />
+            <>
+              <MainProjectContainer>
+                <ProjectLine>
+
+                </ProjectLine>
+                <div key={project.slug.current}>
+                  <ProjectLink to={'/projects/' + project.slug.current} >
+                    <MainTitle>{project.title}</MainTitle>
+                  </ProjectLink>  
+                    <ImageContainer>
+                      {project.images && project.images.map((image) => (
+                          <img 
+                            src={urlFor(image).url()}
+                            alt={image.alt}
+                            height='150px'
+                            width='120px'
+                            key={image.index}
+                          />
+                      ))}
+                    </ImageContainer>   
                 </div>
-                ))}
-            </div>
-              </Link>
-            </ProjectContainer>
-        ))}  
-        <ProjectImagesContainer>
-        </ProjectImagesContainer>
+              </MainProjectContainer>
+            </>
+          ))}
       </MainContainer>
     </>
   )
 }
 
-const MainContainer = styled.div`
+
+const MainProjectContainer = styled.section`
   display: flex;
-  justify-content: center;
-  margin-top: 70px
+  align-items: center;
+  margin: 0 80px 70px 0;
 `
 
-const ProjectContainer = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  height: 30px;
+const MainContainer = styled.div`
+  margin: 0 10px 0 20px;
+  border-left: 2px solid black;
+  padding: 50px 0;
+`
+
+const ImageContainer = styled.div`
+display: none;
+  @media (min-width: 1200px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50vw;
+  } 
 `
 
 const ProjectLine = styled.div`
-  border-bottom: 1px solid black;
-  width: 100%
+  border-top: 2px solid black;
+  width: 30%
 `
 
-const ProjectTitle = styled.h2`
+const MainTitle = styled.h1`
   font-family: 'Cormorant', serif;
-  font-size: 12px;
-  text-align: start;
-  width: 100%
+  font-size: 18px;
+  height: 100%;
+  margin-left: 4px
 `
 
-const ProjectImagesContainer = styled.div`
-  width: 45%;
+const ProjectLink = styled(Link)`
+  color: black;
+  text-decoration: none;
 `
 
 export default Project
