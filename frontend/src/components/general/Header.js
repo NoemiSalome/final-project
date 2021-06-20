@@ -37,7 +37,7 @@ const HeaderContainer = styled.header`
 
 const HeaderTitle = styled.h1`
   font-family: 'Abril Fatface', cursive;
-  font-size: 20px;
+  font-size: 17px;
   margin-left: 15px
 `
 
