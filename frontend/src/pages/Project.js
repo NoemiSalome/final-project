@@ -34,14 +34,12 @@ const Project = () => {
   return (
     <>
       <Header />
-      <MainContainer>
-        {projectData && 
+      <ContentContainer>
+      {projectData && 
           projectData.map((project) => (
             <>
-              <MainProjectContainer>
-                <ProjectLine>
-
-                </ProjectLine>
+              <ProjectContainer>
+                <ProjectLine></ProjectLine>
                 <div key={project.slug.current}>
                   <ProjectLink to={'/projects/' + project.slug.current} >
                     <MainTitle>{project.title}</MainTitle>
@@ -58,24 +56,24 @@ const Project = () => {
                       ))}
                     </ImageContainer>   
                 </div>
-              </MainProjectContainer>
+              </ProjectContainer>
             </>
           ))}
-      </MainContainer>
+      </ContentContainer>
+
     </>
   )
 }
 
-
-const MainProjectContainer = styled.section`
+const ProjectContainer = styled.section`
   display: flex;
   align-items: center;
   margin: 0 80px 70px 0;
 `
 
-const MainContainer = styled.div`
-  margin: 0 10px 0 20px;
-  border-left: 2px solid black;
+const ContentContainer = styled.div`
+  margin-left: 30px;
+  border-left: 1px solid black;
   padding: 50px 0;
 `
 
@@ -90,13 +88,13 @@ display: none;
 `
 
 const ProjectLine = styled.div`
-  border-top: 2px solid black;
+  border-top: 1px solid black;
   width: 30%
 `
 
 const MainTitle = styled.h1`
   font-family: 'Cormorant', serif;
-  font-size: 18px;
+  font-size: 15px;
   height: 100%;
   margin-left: 4px
 `

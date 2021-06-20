@@ -7,25 +7,32 @@ const Home = () => {
 
   return (
     <>
-      <Header />
       <MainContainer>
-        <HomeTitle>HOW</HomeTitle>
-        <HomeSubTitleContainer>
-          <HomeSubTitle>i got to know the world of architecture</HomeSubTitle>
-          <HomeSubTitle>i got through three year of design studies</HomeSubTitle>
-          <HomeSubTitle>i got prepared for the next step</HomeSubTitle>
-        </HomeSubTitleContainer>
+          <Header />
+          <ContentContainer>
+            <HomeTitle>HOW</HomeTitle>
+            <HomeSubTitleContainer>
+              <HomeSubTitle>i got to know the world of architecture</HomeSubTitle>
+              <HomeSubTitle>i got through three year of design studies</HomeSubTitle>
+              <HomeSubTitle>i got prepared for the next step</HomeSubTitle>
+            </HomeSubTitleContainer>
+        </ContentContainer>
       </MainContainer>
+
     </>
   )
 }
 
 const MainContainer = styled.div`
+  height: 100vh
+`
+
+const ContentContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 80vh;
-  margin: 0 10px;
+  margin: 0 20px;
+  height: 80vh
 `
 
 const HomeTitle = styled.h1`
@@ -37,6 +44,7 @@ const HomeSubTitleContainer = styled.div`
   display: flex;
   align-items: end;
   flex-direction: column;
+  margin: 0 20px
 `
 
 const HomeSubTitle = styled.h2`

@@ -33,8 +33,8 @@ const About = () => {
 
   return (
     <>
-      <Header />
       <MainContainer>
+        <Header />
         <ContentContainer>
           <img
             src={urlFor(aboutInformation.images).url()}
@@ -52,19 +52,16 @@ const About = () => {
 }
 
 const MainContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-end;
-  height: 80vh;
+  height: 100vh
 `
 
 const ContentContainer = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
   align-items: flex-end;
-  width: 90%;
-  margin-right: 30px
+  margin-right: 30px;
+  height: 80vh
 `
 
 const AboutText = styled.p`
@@ -72,6 +69,7 @@ const AboutText = styled.p`
   font-size: 13px;
   text-align: justify;
   width: 70%;
+  margin-top: 8px;
 `
 
 export default About
