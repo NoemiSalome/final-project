@@ -35,15 +35,17 @@ const About = () => {
     <>
       <Header />
       <MainContainer>
-        <img
-          src={urlFor(aboutInformation.images).url()}
-          alt='portrait'
-          height='150px'
-          width='120px'
-        />
-        <AboutText>
-          {aboutInformation.aboutText}
-        </AboutText>
+        <ContentContainer>
+          <img
+            src={urlFor(aboutInformation.images).url()}
+            alt='portrait'
+            height='150px'
+            width='120px'
+          />
+          <AboutText>
+            {aboutInformation.aboutText}
+          </AboutText>
+        </ContentContainer>
       </MainContainer>
     </>
   )
@@ -52,16 +54,24 @@ const About = () => {
 const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
+  align-items: flex-end;
   height: 80vh;
-  margin: 0 10px;
+`
+
+const ContentContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 90%;
+  margin-right: 30px
 `
 
 const AboutText = styled.p`
   font-family: 'Cormorant', serif;
-  font-size: 12px;
+  font-size: 13px;
   text-align: justify;
-  width: 50%
+  width: 70%;
 `
 
 export default About

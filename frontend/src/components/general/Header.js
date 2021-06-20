@@ -38,6 +38,7 @@ const HeaderContainer = styled.header`
 const HeaderTitle = styled.h1`
   font-family: 'Abril Fatface', cursive;
   font-size: 20px;
+  margin-left: 15px
 `
 
 const NavigationContainer = styled.nav`
@@ -45,6 +46,7 @@ const NavigationContainer = styled.nav`
   justify-content: flex-end;
   width: 50%;
   font-size: 14px;
+  margin-right: 15px
 `
 
 const Navigation = styled.div`
