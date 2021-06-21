@@ -5,7 +5,7 @@ import BlockContent from '@sanity/block-content-to-react'
 
 import sanityClient from '../client.js'
 import Header from 'components/general/Header'
-import ImageSlider from 'components/ProjectImages/ImageSlider'
+import ImageSliderMobile from 'components/ProjectImages/ImageSliderMobile'
 
 const ProjectDetail = () => {
   const [projectDetail, setProjectDetail] = useState([])
@@ -34,7 +34,7 @@ const ProjectDetail = () => {
         <>
         <Header />
           <MainContainer>
-            <ImageSlider />
+            <ImageSliderMobile />
 
 
             {/* <p>{projectDetail.title}</p> */}
