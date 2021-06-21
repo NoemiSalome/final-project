@@ -19,12 +19,8 @@ const About = () => {
         `*[_type == 'about'] {
           aboutText,
           images{
-            asset->{
-              _ref,
-              _type,
-              alt,
-              url
-            }
+            alt,
+            asset->{ url }
           }
       }`)
       .then((data) => setAboutInformation(data[0]))

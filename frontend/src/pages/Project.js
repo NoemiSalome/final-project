@@ -22,9 +22,7 @@ const Project = () => {
           slug,
           'images': images [] {
             alt,
-            asset->{
-              url
-            }
+            asset->{ url }
           }
       }`)
       .then((data) => setProjectData(data))

@@ -7,6 +7,7 @@ import BlockContent from '@sanity/block-content-to-react'
 import sanityClient from '../client.js'
 import Header from 'components/general/Header'
 
+
 const builder = imageUrlBuilder(sanityClient)
 function urlFor(source) {
   return builder.image(source)
@@ -28,9 +29,7 @@ const ProjectDetail = () => {
             learnings,
             'images': images [] {
               alt,
-              asset->{
-                url
-              }
+              asset->{ url }
             }
         }`)
   .then((data) => setProjectDetail(data[0]))
@@ -49,9 +48,11 @@ const ProjectDetail = () => {
               <Counter>1|5</Counter>
             </CounterContainer>            
             <ImageContainer>
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
-              </svg>
+              <PictureButton>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-chevron-left" viewBox="0 0 16 16">
+                  <path fillRule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                </svg>
+              </PictureButton>
                 <Image>
                 {/* <div>
                   {projectDetail.images && projectDetail.images.map((image) => (
@@ -66,9 +67,11 @@ const ProjectDetail = () => {
                     ))}
                 </div> */}
                 </Image>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
-                  <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
-                </svg>
+                <PictureButton>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-chevron-right" viewBox="0 0 16 16">
+                    <path fillRule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                  </svg>
+                </PictureButton>
             </ImageContainer>
 
             {/* <p>{projectDetail.title}</p> */}
@@ -128,6 +131,12 @@ const Image = styled.div`
   width: 250px;
   border: 1px solid black;
   margin: 0 10px
+`
+
+const PictureButton = styled.button`
+  border: none;
+  background: transparent;
+  padding: 5px;
 `
 
 const TitleContainer = styled.div`
