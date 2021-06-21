@@ -10,7 +10,6 @@ import project from './project'
 import about from './about'
 import contact from './contact'
 
-
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema

@@ -1,6 +1,6 @@
 export default {
     name: 'project',
-    title: 'Project',
+    title: 'Project/Internship',
     type: 'document',
     fields: [
       {
@@ -76,8 +76,8 @@ export default {
         type: 'date',
       },
       {
-        name: 'projectSize',
-        title: 'Project size BIG',
+        name: 'type',
+        title: 'Internship',
         type: 'boolean'
       }
     ]
