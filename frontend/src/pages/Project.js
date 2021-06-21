@@ -17,9 +17,10 @@ const Project = () => {
   useEffect(() => {
     sanityClient
       .fetch(
-        `*[_type == 'project'] {
+        `*[_type == 'project']| order(DateOfCompletion) {
           title,
           slug,
+          DateOfCompletion,
           'images': images [] {
             alt,
             asset->{ url }
@@ -36,9 +37,8 @@ const Project = () => {
       {projectData && 
           projectData.map((project) => (
             <>
-              <ProjectContainer>
+              <ProjectContainer key={project.slug}>
                 <ProjectLine></ProjectLine>
-                <div key={project.slug.current}>
                   <ProjectLink to={'/projects/' + project.slug.current} >
                     <MainTitle>{project.title}</MainTitle>
                   </ProjectLink>  
@@ -49,11 +49,11 @@ const Project = () => {
                             alt={image.alt}
                             height='150px'
                             width='120px'
-                            key={image.index}
+                            key={image.url}
                           />
                       ))}
                     </ImageContainer>   
-                </div>
+    
               </ProjectContainer>
             </>
           ))}

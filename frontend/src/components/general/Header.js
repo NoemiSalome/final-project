@@ -31,8 +31,7 @@ const HeaderContainer = styled.header`
   align-items: flex-end;
   width: 100vw;
   height: 40px;
-  padding: 0 3px;
-  margin-bottom: 30px
+  margin-bottom: 30px;
 `
 
 const HeaderTitle = styled.h1`
@@ -46,7 +45,11 @@ const NavigationContainer = styled.nav`
   justify-content: flex-end;
   width: 50%;
   font-size: 14px;
-  margin-right: 15px
+  margin-right: 15px;
+
+  .active {
+    text-decoration: 2px underline black;
+  }
 `
 
 const Navigation = styled.div`
