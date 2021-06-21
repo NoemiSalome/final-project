@@ -13,5 +13,10 @@ export default {
       title: 'Phone number',
       type: 'string'
     },
+    {
+      name: 'contactWords',
+      title: 'Last words on contact page',
+      type: 'string'
+    },
   ],
 }
