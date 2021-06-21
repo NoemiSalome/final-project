@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import styled from 'styled-components/macro'
-import BlockContent from '@sanity/block-content-to-react'
 
 import sanityClient from '../client.js'
 import Header from 'components/general/Header'
@@ -28,7 +27,7 @@ const ProjectDetail = () => {
 
     if (!ProjectDetail) 
       return <div>loading</div>
-      
+  
 
     return (
         <>
@@ -44,7 +43,7 @@ const ProjectDetail = () => {
             </TitleContainer>
 
             <DescriptionContainer>
-              <BlockContent blocks={projectDetail.description} />
+              {projectDetail.description}
             </DescriptionContainer>
             
             <TitleLearning>how to</TitleLearning>
@@ -69,6 +68,7 @@ const MainContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   margin: 0 25px;
+  padding: 10px
 `
 
 const TitleContainer = styled.div`

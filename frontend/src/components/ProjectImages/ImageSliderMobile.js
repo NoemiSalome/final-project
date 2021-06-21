@@ -11,6 +11,15 @@ const ImageSliderMobile = () => {
   const [current, setCurrent] = useState(0)
   const length = images.length
 
+  const nextImage = () => {
+    setCurrent(current === length - 1 ? 0 : current + 1);
+  };
+  
+  const previousImage = () => {
+    setCurrent(current === 0 ? length - 1 : current - 1);
+  };
+
+
   useEffect(() => {
     sanityClient
       .fetch(
@@ -24,44 +33,43 @@ const ImageSliderMobile = () => {
   .catch(console.error)
 }, [slug])    
 
-// if (!Array.isArray(images) || images.length <= 1) {
-//   return null
-// }
-
-const nextImage = () => {
-  setCurrent(current === length - 1 ? 0 : current + 1);
-};
-
-const previousImage = () => {
-  setCurrent(current === 0 ? length - 1 : current - 1);
-};
-
-console.log(current)
-
+if (images.length <= 0) {
+  return <div></div>
+}
   return (
     <>
-      <CounterContainer>
-        <Counter>{current+1}|{length}</Counter>
-      </CounterContainer>     
-      <ImageContainer>
-      <BsChevronLeft className='left-arrow' onClick={previousImage} />
-        {images.map((image, index) => (
-          <div key={index}>
-              {index === current && (
-                <Image 
-                src={image.asset.url}
-                alt={image.alt}
-                height='auto'
-                width='300px'
-                />
-              )}
-          </div>
-        ))}
-        <BsChevronRight className='right-forward' onClick={nextImage} />
-      </ImageContainer>
+      <MainContainer>
+        <CounterContainer>
+            <Counter>{current+1}|{length}</Counter>
+          </CounterContainer>     
+          <ImageContainer>
+          <BsChevronLeft className='left-arrow' onClick={previousImage} />
+            {images.map((image, index) => (
+              <div key={index}>
+                  {index === current && (
+                    <Image 
+                    src={image.asset.url}
+                    alt={image.alt}
+                    height='auto'
+                    width='120px'
+                    />
+                  )}
+              </div>
+            ))}
+            <BsChevronRight className='right-forward' onClick={nextImage} />
+          </ImageContainer>
+      </MainContainer>
     </>
   )  
 }
+
+const MainContainer = styled.section`
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+`
 
 const CounterContainer = styled.section`
   display: flex;
@@ -78,6 +86,7 @@ const ImageContainer = styled.section`
   margin: 10px 0 30px;
   justify-content: center;
   align-items: center;
+  height: 100%
 `
 
 const Image = styled.img`
