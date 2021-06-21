@@ -48,7 +48,7 @@ const NavigationContainer = styled.nav`
   margin-right: 15px;
 
   .active {
-    text-decoration: 2px underline black;
+    text-decoration: 2px underline pink;
   }
 `
 

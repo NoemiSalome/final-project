@@ -25,8 +25,8 @@ const Contact = () => {
         <Header />
         <ContentContainer>
           <ContactContainer>
-            <div>{contactData.email}</div>
-            <div>{contactData.phone}</div>
+            <Mail href="mailto:anina.schmid@gmx.ch">{contactData.email}</Mail>
+            <p>{contactData.phone}</p>
           </ContactContainer>
           <GreetingContainer>
             <ProjectLine></ProjectLine>
@@ -61,6 +61,11 @@ const ContactContainer = styled.div`
   border-left: 1px solid black;
   height: 55vh;
   padding: 50px 10px 0 0;
+`
+
+const Mail = styled.a`
+  text-decoration: none;
+  color: black;
 `
 
 const GreetingContainer = styled.div`

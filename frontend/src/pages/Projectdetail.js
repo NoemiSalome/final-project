@@ -15,7 +15,6 @@ const ProjectDetail = () => {
     sanityClient
       .fetch(
         `*[slug.current == '${slug}'] {
-            title,
             semester,
             studio,
             description,
@@ -28,15 +27,11 @@ const ProjectDetail = () => {
     if (!ProjectDetail) 
       return <div>loading</div>
   
-
     return (
         <>
         <Header />
           <MainContainer>
             <ImageSliderMobile />
-
-
-            {/* <p>{projectDetail.title}</p> */}
             <TitleContainer>
               <ProjectTitle>{projectDetail.semester}</ProjectTitle>
               <ProjectTitle>{projectDetail.studio}</ProjectTitle>
