@@ -1,17 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import styled from 'styled-components/macro'
 import imageUrlBuilder from '@sanity/image-url'
 
 import sanityClient from '../../client'
-
 
 const builder = imageUrlBuilder(sanityClient)
 function urlFor(source) {
   return builder.image(source)
 }
 
-const ImagesGallery = () => {
+const SliderData = () => {
   const [images, setImages] = useState([])
   const { slug } = useParams()
 
@@ -30,20 +28,20 @@ const ImagesGallery = () => {
 
   return (
     <>
-      {/* <div>
-          {images.images && images.images.map((image) => (
-          <div key={image.index}>
-              <img 
-              src={urlFor(image).url()}
-              alt={image.alt}
-              height='150px'
-              width='120px'
-              />
-          </div>
-          ))}
-      </div> */}
+      <div>
+        {images.images && images.images.map((image) => (
+        <div key={image.index}>
+            <img 
+            src={urlFor(image).url()}
+            alt={image.alt}
+            height='150px'
+            width='120px'
+            />
+        </div>
+        ))}
+      </div>
     </>
-  )
+  )  
 }
 
-export default ImagesGallery
+export default SliderData
