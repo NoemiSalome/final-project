@@ -73,6 +73,10 @@ const ContentContainer = styled.div`
   margin-left: 30px;
   border-left: 1px solid black;
   padding: 50px 0;
+    @media(min-width: 768px){
+      margin: 100px;
+      border-left: 2px solid black;
+    }
 `
 
 const ImageContainer = styled.div`
@@ -86,15 +90,18 @@ display: none;
 `
 
 const ProjectLine = styled.div`
-  border-top: 1px solid black;
-  width: 30%
+  border-bottom: 1px solid black;
+  width: 30%;
 `
 
 const MainTitle = styled.h1`
   font-family: 'Cormorant', serif;
   font-size: 15px;
   height: 100%;
-  margin-left: 4px
+  margin-left: 4px;
+    @media(min-width: 768px){
+      font-size: 18px;
+    }
 `
 
 const ProjectLink = styled(Link)`
