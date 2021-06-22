@@ -43,7 +43,7 @@ const Contact = () => {
 
 const MainContainer = styled.div`
   height: 100vh;
-  width: 100vw
+  width: 100vw;
 `
 
 const ContentContainer = styled.div`
@@ -52,6 +52,9 @@ const ContentContainer = styled.div`
   justify-content: space-between;
   align-items: space-between;
   margin: 0 30px;
+    @media(min-width: 768px){
+      margin: 50px 100px;
+    }
 `
 
 const ContactContainer = styled.div`
@@ -61,6 +64,10 @@ const ContactContainer = styled.div`
   border-left: 1px solid black;
   height: 55vh;
   padding: 50px 10px 0 0;
+    @media(min-width: 768px){
+      font-size: 20px;
+      border-left: 2px solid black;
+    }
 `
 
 const Mail = styled.a`
@@ -72,24 +79,38 @@ const GreetingContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  border-left: 2px dotted black;
+  border-left: 2px solid black;
   height: 1px
+    @media(min-width: 768px){
+    font-size: 20px;
+    border-left: 2px solid black;
+    }
 `
 
 const DottedLineContainer = styled.div`
   height: 150px;
   border-left: 2px dotted black;
+    @media(min-width: 768px){
+      font-size: 20px;
+      border-left: 2px dotted black;
+      }
 `
 
 const ProjectLine = styled.div`
   border-top: 1px solid black;
-  width: 30%
+  width: 30%;
+    @media(min-width: 768px){
+      border-top: 2px solid black;
+      }
 `
 
 const MainTitle = styled.h1`
   font-family: 'Cormorant', serif;
   font-size: 15px;
   margin-left: 8px;
+    @media(min-width: 768px){
+      font-size: 18px;
+    }
 `
 
 export default Contact
