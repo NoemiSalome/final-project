@@ -67,6 +67,9 @@ const Image = styled.img`
     @media(min-width: 768px){
       height: 250px;
     }
+    @media(min-width: 900px){
+      height: 300px;
+    }
 `
 
 const AboutText = styled.p`
@@ -77,6 +80,10 @@ const AboutText = styled.p`
   margin-top: 8px;
   @media(min-width: 768px){
     font-size: 18px;
+  }
+  @media(min-width: 900px){
+    width: 620px;
+    font-size: 22px
   }
 `
 
