@@ -78,13 +78,13 @@ const AboutText = styled.p`
   text-align: justify;
   width: 70%;
   margin-top: 8px;
-  @media(min-width: 768px){
-    font-size: 18px;
-  }
-  @media(min-width: 900px){
-    width: 620px;
-    font-size: 22px
-  }
+    @media(min-width: 768px){
+      font-size: 18px;
+    }
+    @media(min-width: 900px){
+      width: 620px;
+      font-size: 22px
+    }
 `
 
 export default About

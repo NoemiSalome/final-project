@@ -55,6 +55,9 @@ const ContentContainer = styled.div`
     @media(min-width: 768px){
       margin: 50px 100px;
     }
+    @media(min-width: 900px){
+      margin: 50px 600px 0 100px;
+    }
 `
 
 const ContactContainer = styled.div`
@@ -68,6 +71,10 @@ const ContactContainer = styled.div`
       font-size: 20px;
       border-left: 2px solid black;
     }
+    @media(min-width: 900px){
+      font-size: 25px;
+      border-left: 4px solid black
+    }
 `
 
 const Mail = styled.a`
@@ -80,19 +87,17 @@ const GreetingContainer = styled.div`
   flex-direction: row;
   align-items: center;
   border-left: 2px solid black;
-  height: 1px
-    @media(min-width: 768px){
-    font-size: 20px;
-    border-left: 2px solid black;
-    }
+  height: 1px;
 `
 
 const DottedLineContainer = styled.div`
   height: 150px;
   border-left: 2px dotted black;
     @media(min-width: 768px){
-      font-size: 20px;
       border-left: 2px dotted black;
+      }
+      @media(min-width: 768px){
+        border-left: 4px dotted black;
       }
 `
 
@@ -102,6 +107,9 @@ const ProjectLine = styled.div`
     @media(min-width: 768px){
       border-top: 2px solid black;
       }
+      @media(min-width: 900px){
+        border-top: 4px solid black;
+      }
 `
 
 const MainTitle = styled.h1`
@@ -110,6 +118,9 @@ const MainTitle = styled.h1`
   margin-left: 8px;
     @media(min-width: 768px){
       font-size: 18px;
+    }
+    @media(min-width: 900px){
+      font-size: 25px;
     }
 `
 
