@@ -4,7 +4,7 @@ import styled from 'styled-components/macro'
 
 import sanityClient from '../client.js'
 import Header from 'components/general/Header'
-import ImageSliderMobile from 'components/ProjectImages/ImageSliderMobile'
+import ImageSlider from 'components/ProjectImages/ImageSlider'
 
 const ProjectDetail = () => {
   const [projectDetail, setProjectDetail] = useState([])
@@ -31,7 +31,7 @@ const ProjectDetail = () => {
         <>
         <Header />
           <MainContainer>
-            <ImageSliderMobile />
+            <ImageSlider />
             <TitleContainer>
               <ProjectTitle>{projectDetail.semester}</ProjectTitle>
               <ProjectTitle>{projectDetail.studio}</ProjectTitle>
@@ -63,7 +63,10 @@ const MainContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   margin: 0 25px;
-  padding: 10px
+  padding: 10px;
+    @media(min-width: 768px){
+      margin: 100px;
+    }
 `
 
 const TitleContainer = styled.div`
@@ -80,6 +83,9 @@ const DescriptionContainer = styled.div`
   font-family: 'Cormorant', serif;
   font-size: 15px;
   text-align: justify;
+    @media(min-width: 768px){
+      margin-bottom: 10px;
+    }
 `
 
 const LearningsContainer = styled.div`

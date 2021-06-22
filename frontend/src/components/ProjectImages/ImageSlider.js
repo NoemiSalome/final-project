@@ -47,11 +47,9 @@ if (images.length <= 0) {
             {images.map((image, index) => (
               <div key={index}>
                   {index === current && (
-                    <Image 
+                    <ProjectImage 
                     src={image.asset.url}
                     alt={image.alt}
-                    height='auto'
-                    width='120px'
                     />
                   )}
               </div>
@@ -89,9 +87,14 @@ const ImageContainer = styled.section`
   height: 100%
 `
 
-const Image = styled.img`
-  margin: 12px;
+const ProjectImage = styled.img`
+  height: auto;
+  width: 120px;
+    @media(min-width: 768px){
+      width: 230px;
+    }
 `
+
 
 
 export default ImageSliderMobile
