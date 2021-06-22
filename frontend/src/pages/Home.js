@@ -25,6 +25,9 @@ const Home = () => {
 
 const MainContainer = styled.div`
   height: 100vh
+    @media(min-width: 900px){
+      height: 60vh;
+    }
 `
 
 const ContentContainer = styled.div`
@@ -32,7 +35,12 @@ const ContentContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   margin: 0 20px;
-  height: 80vh
+  height: 80vh;
+
+    @media(min-width: 900px){
+      margin: 0 300px;
+    }
+  
 `
 
 const HomeTitle = styled.h1`
@@ -41,6 +49,9 @@ const HomeTitle = styled.h1`
     @media(min-width: 768px){
       font-size: 50px;
       margin: 0 0 20px 50px
+    }
+    @media(min-width: 900px){
+      font-size: 80px;
     }
 `
 
@@ -58,6 +69,10 @@ const HomeSubTitle = styled.h2`
     @media(min-width: 768px){
       font-size: 18px;
       margin: 0 70px 10px
+    }
+    @media(min-width: 900px){
+      font-size: 28px;
+      margin: 0 220px 20px
     }
 `
 

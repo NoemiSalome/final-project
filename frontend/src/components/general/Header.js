@@ -32,9 +32,8 @@ const HeaderContainer = styled.header`
   width: 100vw;
   height: 40px;
   margin-bottom: 30px;
-
-    @media(min-width: 768px){
-      margin-top: 10px
+    @media(min-width: 900px){
+      height: 80px;
     }
 `
 
@@ -42,9 +41,12 @@ const HeaderTitle = styled.h1`
   font-family: 'Abril Fatface', cursive;
   font-size: 17px;
   margin-left: 15px;
-
     @media(min-width: 768px){
       font-size: 30px
+    }
+    @media(min-width: 900px){
+      font-size: 40px;
+      margin-left: 100px
     }
 `
 
@@ -55,6 +57,13 @@ const NavigationContainer = styled.nav`
   margin-right: 15px;
   .active {
     text-decoration: 2px underline pink;
+  }
+
+  @media(min-width: 768px){
+    margin-right: 100px;
+    .active {
+      text-decoration: 4px underline pink;
+    }
   }
 `
 
@@ -67,6 +76,10 @@ const Navigation = styled.div`
 
     @media(min-width: 768px){
       font-size: 22px
+    }
+    @media(min-width:900px){
+      font-size: 25px;
+      margin-left: 25px
     }
 `
 const Link = styled(NavLink)`
