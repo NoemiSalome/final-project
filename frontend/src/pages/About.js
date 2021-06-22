@@ -32,11 +32,9 @@ const About = () => {
       <MainContainer>
         <Header />
         <ContentContainer>
-          <img
+          <Image
             src={urlFor(aboutInformation.images).url()}
             alt='portrait'
-            height='150px'
-            width='120px'
           />
           <AboutText>
             {aboutInformation.aboutText}
@@ -57,7 +55,18 @@ const ContentContainer = styled.div`
   justify-content: flex-end;
   align-items: flex-end;
   margin-right: 30px;
-  height: 80vh
+  height: 80vh;
+    @media(min-width: 768px){
+      margin-right: 100px;
+    }
+`
+
+const Image = styled.img`
+  height: 175px;
+  width: auto;
+    @media(min-width: 768px){
+      height: 250px;
+    }
 `
 
 const AboutText = styled.p`
@@ -66,6 +75,9 @@ const AboutText = styled.p`
   text-align: justify;
   width: 70%;
   margin-top: 8px;
+  @media(min-width: 768px){
+    font-size: 18px;
+  }
 `
 
 export default About
