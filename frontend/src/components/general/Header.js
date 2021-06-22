@@ -44,7 +44,7 @@ const HeaderTitle = styled.h1`
   margin-left: 15px;
 
     @media(min-width: 768px){
-      font-size: 35px
+      font-size: 30px
     }
 `
 
