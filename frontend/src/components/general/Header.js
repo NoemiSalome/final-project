@@ -32,21 +32,27 @@ const HeaderContainer = styled.header`
   width: 100vw;
   height: 40px;
   margin-bottom: 30px;
+
+    @media(min-width: 768px){
+      margin-top: 10px
+    }
 `
 
 const HeaderTitle = styled.h1`
   font-family: 'Abril Fatface', cursive;
   font-size: 17px;
-  margin-left: 15px
+  margin-left: 15px;
+
+    @media(min-width: 768px){
+      font-size: 35px
+    }
 `
 
 const NavigationContainer = styled.nav`
   display: flex;
   justify-content: flex-end;
   width: 50%;
-  font-size: 14px;
   margin-right: 15px;
-
   .active {
     text-decoration: 2px underline pink;
   }
@@ -58,6 +64,10 @@ const Navigation = styled.div`
   margin-left: 5px;
   text-decoration: none;
   color: black;
+
+    @media(min-width: 768px){
+      font-size: 22px
+    }
 `
 const Link = styled(NavLink)`
   color: black;
