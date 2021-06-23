@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react'
 import { useParams } from 'react-router-dom'
 import styled from 'styled-components/macro'
-import { BsChevronDown } from 'react-icons/bs' 
+import { BsChevronDown, BsChevronUp } from 'react-icons/bs' 
 
 import sanityClient from '../client.js'
 import Header from 'components/general/Header'
@@ -11,7 +11,9 @@ const ProjectDetailBigScreen = () => {
   const [projectDetail, setProjectDetail] = useState([])
   const { slug } = useParams()
   const projectRef = useRef()
-  const onChevronClick = () => {projectRef.current.scrollIntoView({ behavior: 'smooth' })}
+  const mainRef = useRef()
+  const onChevronClickDown = () => {projectRef.current.scrollIntoView({ behavior: 'smooth' })}
+  const onChevronClickUp = () => {mainRef.current.scrollIntoView({ behavior: 'smooth' })}
 
   useEffect(() => {
   
@@ -35,7 +37,7 @@ const ProjectDetailBigScreen = () => {
 		<>
 			<Header />
       <MainContainer>
-				<FirstHalfPageContainer>
+				<FirstHalfPageContainer ref={mainRef}>
 					<TitleContainer>
 						<ProjectTitle>{projectDetail.semester}</ProjectTitle>
 						<ProjectTitle>{projectDetail.studio}</ProjectTitle>
@@ -43,7 +45,7 @@ const ProjectDetailBigScreen = () => {
               {projectDetail.description}
             </DescriptionContainer>
           </TitleContainer>
-					<BsChevronDown size={32} onClick={onChevronClick} />
+					<BsChevronDown size={32} onClick={onChevronClickDown} />
 				</FirstHalfPageContainer>
 				
 				<SecondHalfPageContainer ref={projectRef}>
@@ -59,6 +61,7 @@ const ProjectDetailBigScreen = () => {
 						</LearningsBox>
 					</LearningsContainer>
 					<ImageSlider />
+					<BsChevronUp size={32} onClick={onChevronClickUp} />
 				</SecondHalfPageContainer>
 			</MainContainer>
 		</>
@@ -103,7 +106,10 @@ const SecondHalfPageContainer = styled.section`
   flex-direction: row;
   align-items: center;
   margin: 0 200px 200px 200px;
-  justify-content: space-between
+  justify-content: space-between;
+  &:last-child{
+    align-items: flex-end;
+  }
 `
 
 const LearningsContainer = styled.div`
@@ -121,6 +127,9 @@ const SingleLearningsBox = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 60px;
+    &:last-child{
+      margin-bottom: 150px;
+    }
 `
 
 const TitleLearning = styled.div`
@@ -135,6 +144,7 @@ const Learnings = styled.p`
   font-size: 18px;
   margin-left: 5px
 `
+
 const LearningsLine = styled.div`
   border-top: 2px solid black;
   width: 10px;
