@@ -68,7 +68,7 @@ const Image = styled.img`
       height: 250px;
     }
     @media(min-width: 900px){
-      height: 300px;
+      height: 250px;
     }
 `
 
@@ -83,7 +83,7 @@ const AboutText = styled.p`
     }
     @media(min-width: 900px){
       width: 620px;
-      font-size: 22px
+      font-size: 18px
     }
 `
 

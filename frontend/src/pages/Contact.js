@@ -71,10 +71,6 @@ const ContactContainer = styled.div`
       font-size: 20px;
       border-left: 2px solid black;
     }
-    @media(min-width: 900px){
-      font-size: 25px;
-      border-left: 4px solid black
-    }
 `
 
 const Mail = styled.a`
@@ -96,9 +92,6 @@ const DottedLineContainer = styled.div`
     @media(min-width: 768px){
       border-left: 2px dotted black;
       }
-      @media(min-width: 768px){
-        border-left: 4px dotted black;
-      }
 `
 
 const ProjectLine = styled.div`
@@ -106,9 +99,6 @@ const ProjectLine = styled.div`
   width: 30%;
     @media(min-width: 768px){
       border-top: 2px solid black;
-      }
-      @media(min-width: 900px){
-        border-top: 4px solid black;
       }
 `
 
@@ -121,6 +111,7 @@ const MainTitle = styled.h1`
     }
     @media(min-width: 900px){
       font-size: 25px;
+      font-weight: bold;
     }
 `
 

@@ -33,7 +33,7 @@ const HeaderContainer = styled.header`
   height: 40px;
   margin-bottom: 30px;
     @media(min-width: 900px){
-      height: 80px;
+      height: 60px;
     }
 `
 
@@ -45,7 +45,7 @@ const HeaderTitle = styled.h1`
       font-size: 30px
     }
     @media(min-width: 900px){
-      font-size: 40px;
+      font-size: 35px;
       margin-left: 100px
     }
 `
@@ -78,8 +78,7 @@ const Navigation = styled.div`
       font-size: 22px
     }
     @media(min-width:900px){
-      font-size: 25px;
-      margin-left: 25px
+      margin-left: 22px
     }
 `
 const Link = styled(NavLink)`

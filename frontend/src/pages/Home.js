@@ -51,7 +51,7 @@ const HomeTitle = styled.h1`
       margin: 0 0 20px 50px
     }
     @media(min-width: 900px){
-      font-size: 80px;
+      font-size: 60px;
     }
 `
 
@@ -59,7 +59,6 @@ const HomeSubTitleContainer = styled.div`
   display: flex;
   align-items: end;
   flex-direction: column;
-  margin: 0 20px
 `
 
 const HomeSubTitle = styled.h2`
@@ -71,8 +70,8 @@ const HomeSubTitle = styled.h2`
       margin: 0 70px 10px
     }
     @media(min-width: 900px){
-      font-size: 28px;
-      margin: 0 220px 20px
+      font-size: 18px;
+      margin: 0 180px 20px
     }
 `
 

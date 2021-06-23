@@ -43,7 +43,7 @@ if (images.length <= 0) {
             <Counter>{current+1}|{length}</Counter>
           </CounterContainer>     
           <ImageContainer>
-          <BsChevronLeft className='left-arrow' onClick={previousImage} />
+          <BsChevronLeft onClick={previousImage} size={32}/>
             {images.map((image, index) => (
               <div key={index}>
                   {index === current && (
@@ -54,7 +54,7 @@ if (images.length <= 0) {
                   )}
               </div>
             ))}
-            <BsChevronRight className='right-forward' onClick={nextImage} />
+            <BsChevronRight onClick={nextImage} size={32}/>
           </ImageContainer>
       </MainContainer>
     </>
@@ -67,6 +67,9 @@ const MainContainer = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+    @media(min-width: 900px){
+      height: 100%;
+    }
 `
 
 const CounterContainer = styled.section`
@@ -77,6 +80,9 @@ const CounterContainer = styled.section`
 const Counter = styled.h3`
   font-family: 'Abril Fatface', cursive;
   font-size: 14px;
+    @media(min-width: 900px){
+      font-size: 22px;
+    }
 `
 
 const ImageContainer = styled.section`
@@ -92,6 +98,9 @@ const ProjectImage = styled.img`
   width: 120px;
     @media(min-width: 768px){
       width: 230px;
+    }
+    @media(min-width: 900px){
+      width: 300px;
     }
 `
 

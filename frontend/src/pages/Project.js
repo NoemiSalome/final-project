@@ -13,6 +13,7 @@ function urlFor(source) {
 
 const Project = () => {
   const [projectData, setProjectData] = useState(null)
+  const [showImage, setShowImage] = useState(false)
 
   useEffect(() => {
     sanityClient
@@ -40,21 +41,26 @@ const Project = () => {
               <ProjectContainer key={project.slug}>
                 <ProjectLine></ProjectLine>
                   <ProjectLink to={'/projects/' + project.slug.current} >
-                    <MainTitle>{project.title}</MainTitle>
+                    <MainTitle
+                      onMouseEnter={() => setShowImage(true)}
+                      onMouseLeave={() => setShowImage(false)}
+                      
+                    >{project.title}</MainTitle>
                   </ProjectLink>  
-                    <ImageContainer>
+                  </ProjectContainer>
+                    {showImage && (
+                      <ImageContainer>
                       {project.images && project.images.map((image) => (
                           <img 
                             src={urlFor(image).url()}
                             alt={image.alt}
                             height='150px'
-                            width='120px'
+                            width='auto'
                             key={image.url}
                           />
                       ))}
                     </ImageContainer>   
-    
-              </ProjectContainer>
+                    )}
             </>
           ))}
       </ContentContainer>
@@ -66,7 +72,8 @@ const Project = () => {
 const ProjectContainer = styled.section`
   display: flex;
   align-items: center;
-  margin: 0 80px 70px 0;
+  margin-bottom: 70px;
+
 `
 
 const ContentContainer = styled.div`
@@ -77,13 +84,17 @@ const ContentContainer = styled.div`
       margin: 100px;
       border-left: 2px solid black;
     }
+    @media(min-width: 900px){
+      margin: 100px 100px;
+      border-left: 2px solid black;
+    }
 `
 
 const ImageContainer = styled.div`
 display: none;
-  @media (min-width: 1200px) {
+border: 1px solid green;
+  @media (min-width: 900px) {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     width: 50vw;
   } 
@@ -92,6 +103,12 @@ display: none;
 const ProjectLine = styled.div`
   border-bottom: 1px solid black;
   width: 30%;
+    @media(min-width: 900px){
+      width: 15%;
+    }
+    @media(min-width: 900px){
+      border-bottom: 2px solid black;
+    }
 `
 
 const MainTitle = styled.h1`
@@ -101,6 +118,10 @@ const MainTitle = styled.h1`
   margin-left: 4px;
     @media(min-width: 768px){
       font-size: 18px;
+    }
+    @media(min-width: 900px){
+      font-size: 22px;
+      font-weight: bold;
     }
 `
 

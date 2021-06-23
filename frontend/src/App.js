@@ -3,7 +3,8 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 import Home from 'pages/Home'
 import Project from 'pages/Project'
-import ProjectDetail from 'pages/Projectdetail'
+// import ProjectDetail from 'pages/Projectdetail'
+import ProjectDetailBigScreen from 'pages/ProjectdetailBigScreen'
 import About from 'pages/About'
 import Contact from 'pages/Contact'
 
@@ -12,7 +13,8 @@ export const App = () => {
     <BrowserRouter>
       <Switch>
         <Route component={Home} path='/' exact />
-        <Route component={ProjectDetail} path='/projects/:slug' />
+        {/* <Route component={ProjectDetail} path='/projects/:slug' /> */}
+        <Route component={ProjectDetailBigScreen} path='/projects/:slug' />
         <Route component={Project} path='/projects' />
         <Route component={About} path='/about' />
         <Route component={Contact} path='/contact' />
