@@ -67,7 +67,7 @@ const MainContainer = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-    @media(min-width: 900px){
+    @media(min-width: 1024px){
       height: 100%;
     }
 `
@@ -80,7 +80,7 @@ const CounterContainer = styled.section`
 const Counter = styled.h3`
   font-family: 'Abril Fatface', cursive;
   font-size: 14px;
-    @media(min-width: 900px){
+    @media(min-width: 1024px){
       font-size: 22px;
     }
 `
@@ -99,7 +99,7 @@ const ProjectImage = styled.img`
     @media(min-width: 768px){
       width: 230px;
     }
-    @media(min-width: 900px){
+    @media(min-width: 1024px){
       width: 300px;
     }
 `

@@ -73,7 +73,9 @@ const ProjectContainer = styled.section`
   display: flex;
   align-items: center;
   margin-bottom: 70px;
-
+  @media(min-width: 1024px){
+    margin:150px 0 150px;
+  }
 `
 
 const ContentContainer = styled.div`
@@ -84,7 +86,7 @@ const ContentContainer = styled.div`
       margin: 100px;
       border-left: 2px solid black;
     }
-    @media(min-width: 900px){
+    @media(min-width: 1024px){
       margin: 100px 100px;
       border-left: 2px solid black;
     }
@@ -93,7 +95,7 @@ const ContentContainer = styled.div`
 const ImageContainer = styled.div`
 display: none;
 border: 1px solid green;
-  @media (min-width: 900px) {
+  @media (min-width: 1024px) {
     display: flex;
     justify-content: center;
     width: 50vw;
@@ -103,10 +105,10 @@ border: 1px solid green;
 const ProjectLine = styled.div`
   border-bottom: 1px solid black;
   width: 30%;
-    @media(min-width: 900px){
+    @media(min-width: 1024px){
       width: 15%;
     }
-    @media(min-width: 900px){
+    @media(min-width: 1024px){
       border-bottom: 2px solid black;
     }
 `
@@ -119,7 +121,7 @@ const MainTitle = styled.h1`
     @media(min-width: 768px){
       font-size: 18px;
     }
-    @media(min-width: 900px){
+    @media(min-width: 1024px){
       font-size: 22px;
       font-weight: bold;
     }

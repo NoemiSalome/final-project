@@ -67,7 +67,7 @@ const Image = styled.img`
     @media(min-width: 768px){
       height: 250px;
     }
-    @media(min-width: 900px){
+    @media(min-width: 1024px){
       height: 250px;
     }
 `
@@ -81,7 +81,7 @@ const AboutText = styled.p`
     @media(min-width: 768px){
       font-size: 18px;
     }
-    @media(min-width: 900px){
+    @media(min-width: 1024px){
       width: 620px;
       font-size: 18px
     }

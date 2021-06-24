@@ -78,6 +78,7 @@ const TitleContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin-right: 20px
+  heigth: 100vh
 `
 
 const ProjectTitle = styled.div`

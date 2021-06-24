@@ -55,7 +55,7 @@ const ContentContainer = styled.div`
     @media(min-width: 768px){
       margin: 50px 100px;
     }
-    @media(min-width: 900px){
+    @media(min-width: 1024px){
       margin: 50px 600px 0 100px;
     }
 `
@@ -109,7 +109,7 @@ const MainTitle = styled.h1`
     @media(min-width: 768px){
       font-size: 18px;
     }
-    @media(min-width: 900px){
+    @media(min-width: 1024px){
       font-size: 25px;
       font-weight: bold;
     }
