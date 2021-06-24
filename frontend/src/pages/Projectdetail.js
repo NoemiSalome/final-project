@@ -1,11 +1,10 @@
-import React from 'react'
+import React, { useEffect, useState }  from 'react'
 
 import ProjectDetailSmallScreen from '../components/ProjectDetailSmallScreen'
 import ProjectDetailBigScreen from '../components/ProjectdetailBigScreen'
-import { useEffect } from 'react'
 
 const ProjectDetail = () => {
-  const [width, setWidth] = React.useState(window.innerWidth);
+  const [width, setWidth] = useState(window.innerWidth);
   const breakpoint = 1024;
 
 useEffect(() => {

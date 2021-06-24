@@ -60,7 +60,6 @@ const NavigationContainer = styled.nav`
   }
 
   @media(min-width: 768px){
-    margin-right: 100px;
     .active {
       text-decoration: 4px underline pink;
     }
