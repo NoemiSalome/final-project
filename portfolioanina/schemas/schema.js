@@ -5,7 +5,7 @@ import createSchema from 'part:@sanity/base/schema-creator'
 import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 // We import object and document schemas
-import blockContent from './blockContent'
+// import blockContent from './blockContent'
 import project from './project'
 import about from './about'
 import contact from './contact'
@@ -22,6 +22,6 @@ export default createSchema({
     project,
     about,
     contact,
-    blockContent,
+    // blockContent,
   ]),
 })
