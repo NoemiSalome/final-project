@@ -7,11 +7,13 @@ import Project from 'pages/Project'
 import ProjectDetailBigScreen from 'pages/ProjectdetailBigScreen'
 import About from 'pages/About'
 import Contact from 'pages/Contact'
+import Loader from 'components/general/Loader'
 
 export const App = () => {
   return (
     <BrowserRouter>
       <Switch>
+        <Loader />
         <Route component={Home} path='/' exact />
         {/* <Route component={ProjectDetail} path='/projects/:slug' /> */}
         <Route component={ProjectDetailBigScreen} path='/projects/:slug' />
