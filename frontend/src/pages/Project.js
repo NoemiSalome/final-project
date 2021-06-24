@@ -74,7 +74,7 @@ const ProjectContainer = styled.section`
   align-items: center;
   margin-bottom: 70px;
   @media(min-width: 1024px){
-    margin:150px 0 150px;
+    margin: 100px 0;
   }
 `
 

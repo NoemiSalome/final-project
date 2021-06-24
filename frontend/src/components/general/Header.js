@@ -1,8 +1,27 @@
-import React from 'react'
+import React,{ useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 import styled from 'styled-components/macro'
 import { NavLink } from 'react-router-dom'
 
+import sanityClient from '../../client'
+
 const Header = () => {
+  const [projectTitle, setProjectTitle] = useState([])
+  const { slug } = useParams()
+
+  useEffect(() => {
+  
+    sanityClient
+      .fetch(
+        `*[slug.current == '${slug}'] {
+            title
+        }`)
+  .then((data) => setProjectTitle(data[0]))
+  .catch(console.error)
+}, [slug])
+
+if (!setProjectTitle)
+return <div></div>
 
   return (
     <HeaderContainer>
@@ -13,6 +32,9 @@ const Header = () => {
         </Navigation>
         <Navigation>
           <Link to="/projects">projects</Link>
+          <CurrentProject>
+            {projectTitle && projectTitle.title}
+          </CurrentProject>
         </Navigation>
         <Navigation>
           <Link to="/about">about</Link>
@@ -25,12 +47,23 @@ const Header = () => {
     )
 }
 
+const CurrentProject = styled.h4`
+  font-family: 'Cormorant', serif;
+  font-size: 12px;
+    @media(min-width: 768px){
+      font-size: 16px;
+    }
+    @media(min-width: 1024px){
+      font-size: 20px;
+    }
+`
+
 const HeaderContainer = styled.header`
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
   width: 100vw;
-  height: 40px;
+  height: 80px;
+  margin-top: 10px;
   margin-bottom: 30px;
     @media(min-width: 1024px){
       height: 60px;
@@ -68,21 +101,23 @@ const NavigationContainer = styled.nav`
 
 const Navigation = styled.div`
   font-family: 'Abril Fatface', cursive;
+  display: flex;
+  flex-direction: column;
   font-size: 13px;
   margin-left: 5px;
   text-decoration: none;
   color: black;
-
     @media(min-width: 768px){
       font-size: 22px
     }
     @media(min-width:1024px){
       margin-left: 22px
     }
-`
-const Link = styled(NavLink)`
-  color: black;
-  text-decoration: none;
-`
+  `
+
+  const Link = styled(NavLink)`
+    color: black;
+    text-decoration: none;
+  `
 
 export default Header

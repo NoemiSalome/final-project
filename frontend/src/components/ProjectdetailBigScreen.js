@@ -45,7 +45,11 @@ const ProjectDetailBigScreen = () => {
               {projectDetail.description}
             </DescriptionContainer>
           </TitleContainer>
-					<BsChevronDown size={32} onClick={onChevronClickDown} />
+					<BsChevronDown 
+            size={32} 
+            onClick={onChevronClickDown}
+            style={{ paddingLeft: 20 }}
+          />
 				</FirstHalfPageContainer>
 				
 				<SecondHalfPageContainer ref={projectRef}>
@@ -60,8 +64,12 @@ const ProjectDetailBigScreen = () => {
 							))}
 						</LearningsBox>
 					</LearningsContainer>
-					<ImageSlider />
-					<BsChevronUp size={32} onClick={onChevronClickUp} />
+            <ImageSlider />
+            <BsChevronUp 
+              size={32} 
+              onClick={onChevronClickUp}
+              style={{ paddingLeft: 20 }} 
+            />
 				</SecondHalfPageContainer>
 			</MainContainer>
 		</>
@@ -107,7 +115,6 @@ const SecondHalfPageContainer = styled.section`
   flex-direction: row;
   align-items: center;
   margin: 0 200px 200px 200px;
-  justify-content: space-between;
   &:last-child{
     align-items: flex-end;
   }
