@@ -2,10 +2,17 @@ import React, { useEffect, useState, useRef } from 'react'
 import { useParams } from 'react-router-dom'
 import styled from 'styled-components/macro'
 import { BsChevronDown, BsChevronUp } from 'react-icons/bs' 
+import imageUrlBuilder from '@sanity/image-url'
+
 
 import sanityClient from '../client.js'
 import Header from 'components/general/Header'
-import ImageSlider from 'components/ProjectImages/ImageSlider'
+
+
+const builder = imageUrlBuilder(sanityClient)
+function urlFor(source) {
+  return builder.image(source)
+}
 
 const ProjectDetailBigScreen = () => {
   const [projectDetail, setProjectDetail] = useState([])
@@ -24,6 +31,10 @@ const ProjectDetailBigScreen = () => {
             studio,
             description,
             learnings,
+            'images': images [] {
+              alt,
+              asset->{ url }
+            }
         }`)
   .then((data) => setProjectDetail(data[0]))
   .catch(console.error)
@@ -64,18 +75,41 @@ const ProjectDetailBigScreen = () => {
 							))}
 						</LearningsBox>
 					</LearningsContainer>
-            <ImageSlider />
-            <BsChevronUp 
-              size={32} 
-              onClick={onChevronClickUp}
-              style={{ paddingLeft: 20 }} 
-            />
+          <ImageContainer>
+            {projectDetail.images && projectDetail.images.map((image) => (
+                  <ProjectImage 
+                    src={urlFor(image).url()}
+                    alt={image.alt}
+                    key={image.url}
+                  />
+            ))}
+          </ImageContainer>   
+          <BsChevronUp 
+            size={32} 
+            onClick={onChevronClickUp}
+            style={{ paddingLeft: 20 }} 
+          />
 				</SecondHalfPageContainer>
 			</MainContainer>
 		</>
 		)
 	}	
 
+  const ImageContainer = styled.section`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  `
+  
+  const ProjectImage = styled.img`
+  display:block;
+    height: auto;
+    width: auto;
+    max-width: 400px;
+    max-height: 220px;
+    margin: 13px
+  `
+  
 const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -113,11 +147,8 @@ const FirstHalfPageContainer = styled.section`
 const SecondHalfPageContainer = styled.section`
   display: flex;
   flex-direction: row;
-  align-items: center;
+  justify-content: flex-start;
   margin: 0 200px 200px 200px;
-  &:last-child{
-    align-items: flex-end;
-  }
 `
 
 const LearningsContainer = styled.div`

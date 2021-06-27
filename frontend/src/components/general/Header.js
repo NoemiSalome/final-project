@@ -47,12 +47,15 @@ const Header = () => {
 
 const CurrentProject = styled.h4`
   font-family: 'Cormorant', serif;
-  font-size: 12px;
+  font-size: 11px;
+  position: absolute;
+  top: 27px;
     @media(min-width: 768px){
       font-size: 16px;
+      top: 42px;
     }
     @media(min-width: 1024px){
-      font-size: 20px;
+      font-size: 16px;
     }
 `
 
@@ -105,6 +108,7 @@ const Navigation = styled.div`
   margin-left: 5px;
   text-decoration: none;
   color: black;
+  width: 100px;
     @media(min-width: 768px){
       font-size: 22px
     }
