@@ -80,7 +80,7 @@ const ProjectImage = styled.img`
 display:block;
   height: auto;
   width: auto;
-  max-width: 300px;
+  max-width: 400px;
   max-height: 220px;
   margin: 13px
 `
@@ -101,7 +101,6 @@ const ProjectBox = styled.section`
   display: flex;
   align-items: center;
   margin-bottom: 70px;
-  border: 1px solid green;
   @media(min-width: 1024px){
     margin: 100px 0;
   }
@@ -111,14 +110,13 @@ const ProjectContainer = styled.div`
   margin-left: 30px;
   border-left: 1px solid black;
   padding: 50px 0;
-  border: 1px solid red;
   width: 50%;
     @media(min-width: 768px){
       margin: 100px;
       border-left: 2px solid black;
     }
     @media(min-width: 1024px){
-      margin: 100px;
+      margin: 0 0 100px 100px;
       border-left: 2px solid black;
       width: 30vw
     }
@@ -130,9 +128,9 @@ display: none;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    border: 1px solid pink;
-    margin: 100px;
-    width: 40vw;
+    margin-top: 100px;
+    width: 50vw;
+    position: fixed;
   } 
 `
 

@@ -92,7 +92,7 @@ const NavigationContainer = styled.nav`
 
   @media(min-width: 768px){
     .active {
-      text-decoration: 4px underline pink;
+      text-decoration: 2px underline pink;
     }
   }
 `

@@ -47,11 +47,15 @@ if (images.length <= 0) {
             {images.map((image, index) => (
               <div key={index}>
                   {index === current && (
-                    <ProjectImage 
-                    src={image.asset.url}
-                    alt={image.alt}
-                    />
+                    <>
+                      <ImageTitle>{image.title}</ImageTitle>
+                      <ProjectImage 
+                      src={image.asset.url}
+                      alt={image.alt}
+                      />
+                    </>
                   )}
+                  
               </div>
             ))}
             <BsChevronRight onClick={nextImage} size={32}/>
@@ -60,6 +64,10 @@ if (images.length <= 0) {
     </>
   )  
 }
+
+const ImageTitle = styled.p`
+  position: absolute;
+`
 
 const MainContainer = styled.section`
   height: 40vh;
@@ -90,7 +98,8 @@ const ImageContainer = styled.section`
   margin: 10px 0 30px;
   justify-content: center;
   align-items: center;
-  height: 100%
+  height: 100%;
+  position: relative;
 `
 
 const ProjectImage = styled.img`
