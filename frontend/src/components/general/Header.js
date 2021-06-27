@@ -20,8 +20,6 @@ const Header = () => {
   .catch(console.error)
 }, [slug])
 
-if (!setProjectTitle)
-return <div></div>
 
   return (
     <HeaderContainer>
@@ -78,7 +76,7 @@ const HeaderTitle = styled.h1`
       font-size: 30px
     }
     @media(min-width: 1024px){
-      font-size: 35px;
+      font-size: 23px;
       margin-left: 100px
     }
 `

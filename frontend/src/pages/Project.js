@@ -14,6 +14,7 @@ function urlFor(source) {
 const Project = () => {
   const [projectData, setProjectData] = useState(null)
   const [showImage, setShowImage] = useState(false)
+  const [activeImage, setActiveImage] = useState(-1)
 
   useEffect(() => {
     sanityClient
@@ -34,71 +35,104 @@ const Project = () => {
   return (
     <>
       <Header />
-      <ContentContainer>
-      {projectData && 
-          projectData.map((project) => (
+      <MainContainer>
+        <ProjectContainer>
+          {projectData && 
+            projectData.map((project, index) => (
+              <>
+                <ProjectBox key={project.slug}>
+                  <ProjectLine></ProjectLine>
+                    <ProjectLink to={'/projects/' + project.slug.current} >
+                      <MainTitle
+                        onMouseEnter={() => {setShowImage(true); setActiveImage(index)}}
+                        onMouseLeave={() => {setShowImage(false); setActiveImage(-1)} } 
+                      >{project.title}</MainTitle>
+                    </ProjectLink>  
+                </ProjectBox>
+              </>
+          ))}
+        </ProjectContainer>
+
+        <PictureContainer>
+        {projectData && 
+          projectData.map((project, index) => (
             <>
-              <ProjectContainer key={project.slug}>
-                <ProjectLine></ProjectLine>
-                  <ProjectLink to={'/projects/' + project.slug.current} >
-                    <MainTitle
-                      onMouseEnter={() => setShowImage(true)}
-                      onMouseLeave={() => setShowImage(false)}
-                      
-                    >{project.title}</MainTitle>
-                  </ProjectLink>  
-                  </ProjectContainer>
-                    {showImage && (
-                      <ImageContainer>
-                      {project.images && project.images.map((image) => (
-                          <img 
-                            src={urlFor(image).url()}
-                            alt={image.alt}
-                            height='150px'
-                            width='auto'
-                            key={image.url}
-                          />
-                      ))}
-                    </ImageContainer>   
-                    )}
+              {showImage && index === activeImage && (
+                <ImageContainer>
+                  {project.images && project.images.map((image) => (
+                        <ProjectImage 
+                          src={urlFor(image).url()}
+                          alt={image.alt}
+                          key={image.url}
+                        />
+                  ))}
+                </ImageContainer>   
+              )}
             </>
           ))}
-      </ContentContainer>
-
+        </PictureContainer>
+      </MainContainer>
     </>
   )
 }
 
-const ProjectContainer = styled.section`
+const ProjectImage = styled.img`
+display:block;
+  height: auto;
+  width: auto;
+  max-width: 300px;
+  max-height: 220px;
+  margin: 13px
+`
+
+const MainContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+`
+
+const PictureContainer = styled.div`
+  width = 50%;
+  display: flex;
+  flex-direcion: column;
+`
+
+const ProjectBox = styled.section`
   display: flex;
   align-items: center;
   margin-bottom: 70px;
+  border: 1px solid green;
   @media(min-width: 1024px){
     margin: 100px 0;
   }
 `
 
-const ContentContainer = styled.div`
+const ProjectContainer = styled.div`
   margin-left: 30px;
   border-left: 1px solid black;
   padding: 50px 0;
+  border: 1px solid red;
+  width: 50%;
     @media(min-width: 768px){
       margin: 100px;
       border-left: 2px solid black;
     }
     @media(min-width: 1024px){
-      margin: 100px 100px;
+      margin: 100px;
       border-left: 2px solid black;
+      width: 30vw
     }
 `
 
 const ImageContainer = styled.div`
 display: none;
-border: 1px solid green;
   @media (min-width: 1024px) {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    width: 50vw;
+    border: 1px solid pink;
+    margin: 100px;
+    width: 40vw;
   } 
 `
 
