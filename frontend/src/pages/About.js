@@ -12,7 +12,6 @@ function urlFor(source) {
 
 const About = () => {
   const [aboutInformation, setAboutInformation] = useState([])
-
   useEffect(() => {
     sanityClient
       .fetch(

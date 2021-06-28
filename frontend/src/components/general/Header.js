@@ -10,7 +10,6 @@ const Header = () => {
   const { slug } = useParams()
 
   useEffect(() => {
-  
     sanityClient
       .fetch(
         `*[slug.current == '${slug}'] {
@@ -18,7 +17,7 @@ const Header = () => {
         }`)
   .then((data) => setProjectTitle(data[0]))
   .catch(console.error)
-}, [slug])
+  }, [slug])
 
 
   return (
@@ -42,7 +41,7 @@ const Header = () => {
         </Navigation>
       </NavigationContainer>
     </HeaderContainer>
-    )
+  )
 }
 
 const CurrentProject = styled.h4`
@@ -92,7 +91,6 @@ const NavigationContainer = styled.nav`
   .active {
     text-decoration: 2px underline pink;
   }
-
   @media(min-width: 768px){
     .active {
       text-decoration: 2px underline pink;

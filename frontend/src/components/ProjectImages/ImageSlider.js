@@ -19,7 +19,6 @@ const ImageSliderMobile = () => {
     setCurrent(current === 0 ? length - 1 : current - 1);
   };
 
-
   useEffect(() => {
     sanityClient
       .fetch(
@@ -33,33 +32,29 @@ const ImageSliderMobile = () => {
   .catch(console.error)
 }, [slug])    
 
-if (images.length <= 0) {
-  return <div></div>
-}
   return (
     <>
       <MainContainer>
         <CounterContainer>
-            <Counter>{current+1}|{length}</Counter>
-          </CounterContainer>     
-          <ImageContainer>
-          <BsChevronLeft onClick={previousImage} size={32}/>
-            {images.map((image, index) => (
-              <div key={index}>
-                  {index === current && (
-                    <>
-                      <ImageTitle>{image.title}</ImageTitle>
-                      <ProjectImage 
+          <Counter>{current+1}|{length}</Counter>
+        </CounterContainer>     
+        <ImageContainer>
+        <BsChevronLeft onClick={previousImage} size={32}/>
+          {images.map((image, index) => (
+            <div key={index}>
+                {index === current && (
+                  <>
+                    <ImageTitle>{image.title}</ImageTitle>
+                    <ProjectImage 
                       src={image.asset.url}
                       alt={image.alt}
-                      />
-                    </>
-                  )}
-                  
-              </div>
-            ))}
-            <BsChevronRight onClick={nextImage} size={32}/>
-          </ImageContainer>
+                    />
+                  </>
+                )}
+            </div>
+          ))}
+        <BsChevronRight onClick={nextImage} size={32}/>
+        </ImageContainer>
       </MainContainer>
     </>
   )  

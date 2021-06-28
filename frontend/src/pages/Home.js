@@ -4,21 +4,19 @@ import styled from 'styled-components/macro'
 import Header from 'components/general/Header'
 
 const Home = () => {
-
   return (
     <>
       <MainContainer>
-          <Header />
-          <ContentContainer>
-            <HomeTitle>HOW</HomeTitle>
-            <HomeSubTitleContainer>
-              <HomeSubTitle>i got to know the world of architecture</HomeSubTitle>
-              <HomeSubTitle>i got through three year of design studies</HomeSubTitle>
-              <HomeSubTitle>i got prepared for the next step</HomeSubTitle>
-            </HomeSubTitleContainer>
+        <Header />
+        <ContentContainer>
+          <HomeTitle>HOW</HomeTitle>
+          <HomeSubTitleContainer>
+            <HomeSubTitle>i got to know the world of architecture</HomeSubTitle>
+            <HomeSubTitle>i got through three year of design studies</HomeSubTitle>
+            <HomeSubTitle>i got prepared for the next step</HomeSubTitle>
+          </HomeSubTitleContainer>
         </ContentContainer>
       </MainContainer>
-
     </>
   )
 }
@@ -36,7 +34,6 @@ const ContentContainer = styled.div`
   justify-content: center;
   margin: 0 20px;
   height: 80vh;
-
     @media(min-width: 1024px){
       margin: 0 300px;
     }

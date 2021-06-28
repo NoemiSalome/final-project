@@ -60,11 +60,11 @@ const Project = () => {
               {showImage && index === activeImage && (
                 <ImageContainer>
                   {project.images && project.images.map((image) => (
-                        <ProjectImage 
-                          src={urlFor(image).url()}
-                          alt={image.alt}
-                          key={image.url}
-                        />
+                    <ProjectImage 
+                      src={urlFor(image).url()}
+                      alt={image.alt}
+                      key={image.url}
+                    />
                   ))}
                 </ImageContainer>   
               )}
