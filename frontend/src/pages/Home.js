@@ -40,7 +40,7 @@ const ContentContainer = styled.div`
 `
 
 const HomeTitle = styled.h1`
-  font-family: 'Abril Fatface', cursive;
+  font-family:'PT Sans', sans-serif;;
   font-size: 30px;
     @media(min-width: 768px){
       font-size: 50px;
@@ -61,6 +61,7 @@ const HomeSubTitle = styled.h2`
   font-size: 12px;
   justify-content: flex-end;
   margin-bottom: 4px;
+  font-family:'PT Sans', sans-serif;;
     @media(min-width: 768px){
       font-size: 18px;
       margin: 0 70px 10px

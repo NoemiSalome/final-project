@@ -72,7 +72,7 @@ const Image = styled.img`
 `
 
 const AboutText = styled.p`
-  font-family: 'Cormorant', serif;
+  font-family: 'PT Sans', sans-serif;
   font-size: 13px;
   text-align: justify;
   width: 70%;

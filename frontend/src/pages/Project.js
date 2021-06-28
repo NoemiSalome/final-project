@@ -146,7 +146,7 @@ const ProjectLine = styled.div`
 `
 
 const MainTitle = styled.h1`
-  font-family: 'Cormorant', serif;
+  font-family: 'PT Sans', sans-serif;
   font-size: 15px;
   height: 100%;
   margin-left: 4px;

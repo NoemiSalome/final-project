@@ -61,7 +61,7 @@ const ContentContainer = styled.div`
 `
 
 const ContactContainer = styled.div`
-  font-family: 'Cormorant', serif;
+  font-family: 'PT Sans', sans-serif;
   font-size: 15px;
   text-align: right;
   border-left: 1px solid black;
@@ -103,7 +103,7 @@ const ProjectLine = styled.div`
 `
 
 const MainTitle = styled.h1`
-  font-family: 'Cormorant', serif;
+  font-family: 'PT Sans', sans-serif;
   font-size: 15px;
   margin-left: 8px;
     @media(min-width: 768px){

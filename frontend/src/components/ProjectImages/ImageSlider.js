@@ -81,7 +81,7 @@ const CounterContainer = styled.section`
 `
 
 const Counter = styled.h3`
-  font-family: 'Abril Fatface', cursive;
+  font-family:'PT Sans', sans-serif;;
   font-size: 14px;
     @media(min-width: 1024px){
       font-size: 22px;

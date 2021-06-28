@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import styled from 'styled-components/macro'
 import { BsChevronDown, BsChevronUp } from 'react-icons/bs' 
 import imageUrlBuilder from '@sanity/image-url'
-
+import { Parallax } from 'react-scroll-parallax'
 
 import sanityClient from '../client.js'
 import Header from 'components/general/Header'
@@ -47,50 +47,55 @@ const ProjectDetailBigScreen = () => {
 
 		<>
 			<Header />
-      <MainContainer>
-				<FirstHalfPageContainer ref={mainRef}>
-					<TitleContainer>
-						<ProjectTitle>{projectDetail.semester}</ProjectTitle>
-						<ProjectTitle>{projectDetail.studio}</ProjectTitle>
-            <DescriptionContainer>
-              {projectDetail.description}
-            </DescriptionContainer>
-          </TitleContainer>
-					<BsChevronDown 
-            size={32} 
-            onClick={onChevronClickDown}
-            style={{ paddingLeft: 20 }}
-          />
-				</FirstHalfPageContainer>
-				
-				<SecondHalfPageContainer ref={projectRef}>
-					<LearningsContainer>
-						<TitleLearning>how to</TitleLearning>
-						<LearningsBox>
-							{projectDetail.learnings && projectDetail.learnings.map((learning) => (
-								<SingleLearningsBox>
-									<LearningsLine></LearningsLine>
-									<Learnings>{learning}</Learnings>
-								</SingleLearningsBox>
-							))}
-						</LearningsBox>
-					</LearningsContainer>
-          <ImageContainer>
-            {projectDetail.images && projectDetail.images.map((image) => (
-                  <ProjectImage 
-                    src={urlFor(image).url()}
-                    alt={image.alt}
-                    key={image.url}
-                  />
-            ))}
-          </ImageContainer>   
-          <BsChevronUp 
-            size={32} 
-            onClick={onChevronClickUp}
-            style={{ paddingLeft: 20 }} 
-          />
-				</SecondHalfPageContainer>
-			</MainContainer>
+      <Parallax 
+        // className='parallax-scrolling'
+        // layers={[]}
+        >
+          <MainContainer>
+            <FirstHalfPageContainer ref={mainRef}>
+              <TitleContainer>
+                <ProjectTitle>{projectDetail.semester}</ProjectTitle>
+                <ProjectTitle>{projectDetail.studio}</ProjectTitle>
+                <DescriptionContainer>
+                  {projectDetail.description}
+                </DescriptionContainer>
+              </TitleContainer>
+              <BsChevronDown 
+                size={32} 
+                onClick={onChevronClickDown}
+                style={{ paddingLeft: 20 }}
+              />
+            </FirstHalfPageContainer>
+            
+            <SecondHalfPageContainer ref={projectRef}>
+              <LearningsContainer>
+                <TitleLearning>how to</TitleLearning>
+                <LearningsBox>
+                  {projectDetail.learnings && projectDetail.learnings.map((learning) => (
+                    <SingleLearningsBox>
+                      <LearningsLine></LearningsLine>
+                      <Learnings>{learning}</Learnings>
+                    </SingleLearningsBox>
+                  ))}
+                </LearningsBox>
+              </LearningsContainer>
+              <ImageContainer>
+                {projectDetail.images && projectDetail.images.map((image) => (
+                      <ProjectImage 
+                        src={urlFor(image).url()}
+                        alt={image.alt}
+                        key={image.url}
+                      />
+                ))}
+              </ImageContainer>   
+              <BsChevronUp 
+                size={32} 
+                onClick={onChevronClickUp}
+                style={{ paddingLeft: 20 }} 
+              />
+            </SecondHalfPageContainer>
+          </MainContainer>
+      </Parallax>
 		</>
 		)
 	}	
@@ -124,13 +129,13 @@ const TitleContainer = styled.div`
 `
 
 const ProjectTitle = styled.div`
-  font-family: 'Cormorant', serif;
+  font-family: 'PT Sans', sans-serif;
   font-size: 25px;
   font-weight: bolder;
 `
 
 const DescriptionContainer = styled.div`
-  font-family: 'Cormorant', serif;
+  font-family: 'PT Sans', sans-serif;
   font-size: 18px;
   text-align: justify;
   width: 50vw;
@@ -172,14 +177,14 @@ const SingleLearningsBox = styled.div`
 `
 
 const TitleLearning = styled.div`
-  font-family: 'Cormorant', serif;
+  font-family: 'PT Sans', sans-serif;
   font-size: 30px;
   font-weight: bolder;
   margin-top: 15px;
 `
 
 const Learnings = styled.p`
-  font-family: 'Cormorant', serif;
+  font-family: 'PT Sans', sans-serif;
   font-size: 18px;
   margin-left: 5px
 `

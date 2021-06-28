@@ -45,13 +45,13 @@ const Header = () => {
 }
 
 const CurrentProject = styled.h4`
-  font-family: 'Cormorant', serif;
+  font-family: 'PT Sans', sans-serif;
   font-size: 11px;
   position: absolute;
-  top: 27px;
+  top: 55px;
     @media(min-width: 768px){
       font-size: 16px;
-      top: 42px;
+      top: 64px;
     }
     @media(min-width: 1024px){
       font-size: 16px;
@@ -60,10 +60,10 @@ const CurrentProject = styled.h4`
 
 const HeaderContainer = styled.header`
   display: flex;
+  align-items: center;
   justify-content: space-between;
   width: 100vw;
   height: 80px;
-  margin-top: 10px;
   margin-bottom: 30px;
     @media(min-width: 1024px){
       height: 60px;
@@ -71,8 +71,8 @@ const HeaderContainer = styled.header`
 `
 
 const HeaderTitle = styled.h1`
-  font-family: 'Abril Fatface', cursive;
-  font-size: 17px;
+  font-family:'PT Sans', sans-serif;;
+  font-size: 15px;
   margin-left: 15px;
     @media(min-width: 768px){
       font-size: 30px
@@ -88,25 +88,22 @@ const NavigationContainer = styled.nav`
   justify-content: flex-end;
   width: 50%;
   margin-right: 15px;
+  text-align: center;
   .active {
-    text-decoration: 2px underline pink;
-  }
-  @media(min-width: 768px){
-    .active {
-      text-decoration: 2px underline pink;
-    }
+    color: white;
+    background: black;
   }
 `
 
 const Navigation = styled.div`
-  font-family: 'Abril Fatface', cursive;
+  font-family:'PT Sans', sans-serif;;
   display: flex;
   flex-direction: column;
   font-size: 13px;
   margin-left: 5px;
   text-decoration: none;
   color: black;
-  width: 100px;
+  width: 110px;
     @media(min-width: 768px){
       font-size: 22px
     }
@@ -118,6 +115,11 @@ const Navigation = styled.div`
   const Link = styled(NavLink)`
     color: black;
     text-decoration: none;
+    padding: 6px 0 1px;
+    :hover {
+      opacity: 0.6;
+      transition: 0.2s;
+    }
   `
 
 export default Header
