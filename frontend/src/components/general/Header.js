@@ -54,7 +54,7 @@ const CurrentProject = styled.h4`
       top: 48px;
     }
     @media(min-width: 1024px){
-      font-size: 16px;
+      font-size: 12px;
     }
 `
 
@@ -64,7 +64,7 @@ const HeaderContainer = styled.header`
   justify-content: space-between;
   width: 100vw;
   height: 80px;
-  margin: 15px 0 ;
+  margin: 15px 0;
     @media(min-width: 1024px){
       height: 60px;
     }
@@ -78,8 +78,7 @@ const HeaderTitle = styled.h1`
       font-size: 25px
     }
     @media(min-width: 1024px){
-      font-size: 23px;
-      margin-left: 100px
+      font-size: 28px;
     }
 `
 
@@ -91,6 +90,9 @@ const NavigationContainer = styled.nav`
   text-align: center;
   .active {
     border-top: 1px solid black
+  }
+  @media(min-width: 1024px){
+    width: 40%;
   }
 `
 

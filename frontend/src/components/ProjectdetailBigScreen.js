@@ -116,55 +116,6 @@ const ProjectDetailBigScreen = () => {
 		)
 	}	
 
-const HoverContent = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
-`
-
-const ImageBox = styled.div`
-  position: relative;
-  width: 60%;
-  display: flex;
-  justify-content: center;
-`
-
-const TitleOverlay = styled.div`
-  color: black;
-  position: absolute;
-  top:0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  transition: opacity 0.4s;
-    :hover{
-      opacity: 0.6;
-    } 
-`
-
-const ImageContainer = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: auto;
-  width: auto;
-`
-
-const ProjectImage = styled.img`
-  display:block;
-  height: auto;
-  max-width: 450px;
-  max-height: 220px;
-  margin: 30px;
-  position: relative;
-`
-  
 const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -181,13 +132,11 @@ const TitleContainer = styled.div`
 const PictureTitle = styled.h3`
   font-family: 'Archivo', sans-serif;
   font-size: 25px;
-  font-weight: bolder;
 `
  
 const ProjectTitle = styled.h2`
   font-family: 'Archivo', sans-serif;
-  font-size: 25px;
-  font-weight: bolder;åß
+  font-size: 20px;
 `
 
 const PictureDescription = styled.h4`
@@ -196,10 +145,11 @@ const PictureDescription = styled.h4`
 `
 
 const DescriptionContainer = styled.div`
-  'Heebo', sans-serif;
-  font-size: 18px;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 17px;
   text-align: justify;
   width: 50vw;
+  margin-top: 10px
 `
 
 const FirstHalfPageContainer = styled.section`
@@ -245,14 +195,63 @@ const TitleLearning = styled.div`
 `
 
 const Learnings = styled.p`
-  'PT Sans', sans-serif;
-  font-size: 18px;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 15px;
   margin-left: 5px
 `
 
 const LearningsLine = styled.div`
   border-top: 2px solid black;
   width: 10px;
+`
+
+const ImageBox = styled.div`
+  position: relative;
+  width: 60%;
+  display: flex;
+  justify-content: center;
+`
+
+const HoverContent = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+`
+
+const TitleOverlay = styled.div`
+  color: black;
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.4s;
+    :hover{
+      opacity: 0.6;
+    } 
+`
+
+const ImageContainer = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+  width: auto;
+`
+
+const ProjectImage = styled.img`
+  display:block;
+  height: auto;
+  max-width: 450px;
+  max-height: 220px;
+  margin: 30px;
+  position: relative;
 `
 
 export default ProjectDetailBigScreen

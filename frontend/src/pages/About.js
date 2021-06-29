@@ -82,7 +82,7 @@ const AboutText = styled.p`
     }
     @media(min-width: 1024px){
       width: 620px;
-      font-size: 18px
+      font-size: 16px;
     }
 `
 

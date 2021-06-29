@@ -85,12 +85,6 @@ const MainContainer = styled.div`
 const ProjectLine = styled.div`
   border-bottom: 1px solid black;
   width: 30%;
-    @media(min-width: 1024px){
-      width: 15%;
-    }
-    @media(min-width: 1024px){
-      border-bottom: 2px solid black;
-    }
 `
 
 const ProjectLink = styled(Link)`
@@ -105,12 +99,9 @@ const ProjectContainer = styled.div`
   width: 50%;
     @media(min-width: 768px){
       margin: 100px;
-      border-left: 2px solid black;
     }
     @media(min-width: 1024px){
-      margin: 0 0 100px 100px;
-      border-left: 2px solid black;
-      width: 30vw
+      margin: 100px 0 0 100px;
     }
 `
 
@@ -132,8 +123,7 @@ const MainTitle = styled.h1`
       font-size: 15px;
     }
     @media(min-width: 1024px){
-      font-size: 22px;
-      font-weight: bold;
+      font-size: 16px;
     }
 `
 
@@ -143,9 +133,9 @@ const ImageContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 100px;
-    width: 50vw;
+    width: 40vw;
     position: fixed;
+    margin-top: 50px;
   } 
 `
 
@@ -153,15 +143,15 @@ const ProjectImage = styled.img`
   display:block;
   height: auto;
   width: auto;
-  max-width: 400px;
-  max-height: 220px;
-  margin: 13px
+  max-width: 300px;
+  max-height: 150px;
+  margin: 5px;
 `
 
 const PictureContainer = styled.div`
-  width = 50%;
+  width: 55%;
   display: flex;
-  flex-direcion: column;
+  justify-content: flex-start;
 `
 
 export default Project

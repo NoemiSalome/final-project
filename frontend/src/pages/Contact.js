@@ -69,7 +69,9 @@ const ContactContainer = styled.div`
   padding: 50px 10px 0 0;
     @media(min-width: 768px){
       font-size: 14px;
-      border-left: 2px solid black;
+    }
+    @media(min-width: 768px){
+      font-size: 16px;
     }
 `
 
@@ -110,8 +112,7 @@ const MainTitle = styled.h1`
       font-size: 15px;
     }
     @media(min-width: 1024px){
-      font-size: 25px;
-      font-weight: bold;
+      font-size: 16px;
     }
 `
 
