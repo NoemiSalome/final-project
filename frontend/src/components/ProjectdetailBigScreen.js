@@ -179,13 +179,13 @@ const TitleContainer = styled.div`
 `
 
 const PictureTitle = styled.h3`
-  font-family: 'Archivo', sans-serif;;
+  font-family: 'Archivo', sans-serif;
   font-size: 25px;
   font-weight: bolder;
 `
  
 const ProjectTitle = styled.h2`
-  font-family: 'Archivo', sans-serif;;
+  font-family: 'Archivo', sans-serif;
   font-size: 25px;
   font-weight: bolder;åß
 `
@@ -238,7 +238,7 @@ const SingleLearningsBox = styled.div`
 `
 
 const TitleLearning = styled.div`
-  font-family: 'Archivo', sans-serif;;
+  font-family: 'Archivo', sans-serif;
   font-size: 30px;
   font-weight: bolder;
   margin-top: 15px;

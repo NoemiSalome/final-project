@@ -45,7 +45,7 @@ const Header = () => {
 }
 
 const CurrentProject = styled.h4`
-  font-family: 'Archivo', sans-serif;;
+  font-family: 'Archivo', sans-serif;
   font-size: 11px;
   position: absolute;
   top: 55px;
@@ -71,7 +71,7 @@ const HeaderContainer = styled.header`
 `
 
 const HeaderTitle = styled.h1`
-  font-family:'Archivo', sans-serif;;;
+  font-family:'Archivo', sans-serif;
   font-size: 15px;
   margin-left: 15px;
     @media(min-width: 768px){
@@ -95,7 +95,7 @@ const NavigationContainer = styled.nav`
 `
 
 const Navigation = styled.div`
-  font-family:'Archivo', sans-serif;;;
+  font-family:'Archivo', sans-serif;
   display: flex;
   flex-direction: column;
   font-size: 13px;
