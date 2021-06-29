@@ -30,7 +30,7 @@ const Header = () => {
         <Navigation>
           <Link to="/projects">projects</Link>
           <CurrentProject>
-            {projectTitle && projectTitle.title}
+            {projectTitle && projectTitle.title}.
           </CurrentProject>
         </Navigation>
         <Navigation>
@@ -119,6 +119,8 @@ const Navigation = styled.div`
     :hover {
       opacity: 0.6;
       transition: 0.2s;
+      background: black;
+      color: white;
     }
   `
 

@@ -33,6 +33,8 @@ const ProjectDetailBigScreen = () => {
             learnings,
             'images': images [] {
               alt,
+              title,
+              description,
               asset->{ url }
             }
         }`)
@@ -80,14 +82,28 @@ const ProjectDetailBigScreen = () => {
                 </LearningsBox>
               </LearningsContainer>
               <ImageContainer>
+
                 {projectDetail.images && projectDetail.images.map((image) => (
-                      <ProjectImage 
-                        src={urlFor(image).url()}
-                        alt={image.alt}
-                        key={image.url}
-                      />
+                  <>
+                  <ImageBox>
+                  <ProjectImage 
+                      src={urlFor(image).url()}
+                      alt={image.alt}
+                      key={image.url}
+                    />
+                     <TitleOverlay>
+                      <HoverContent>
+                        <PictureTitle>{image.title}</PictureTitle>
+                        <PictureDescription>{image.description}</PictureDescription>
+                      </HoverContent>
+                    </TitleOverlay>  
+                
+                  </ImageBox>
+                  </>
                 ))}
-              </ImageContainer>   
+                
+              </ImageContainer>
+
               <BsChevronUp 
                 size={32} 
                 onClick={onChevronClickUp}
@@ -100,20 +116,54 @@ const ProjectDetailBigScreen = () => {
 		)
 	}	
 
-  const ImageContainer = styled.section`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  `
-  
-  const ProjectImage = styled.img`
+const HoverContent = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+`
+
+const ImageBox = styled.div`
+  position: relative;
+  width: 60%;
+  display: flex;
+  justify-content: center;
+`
+
+const TitleOverlay = styled.div`
+  color: white;
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.4s;
+    :hover{
+      opacity: 1;
+    } 
+`
+
+const ImageContainer = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+  width: 100%;
+`
+
+const ProjectImage = styled.img`
   display:block;
-    height: auto;
-    width: auto;
-    max-width: 400px;
-    max-height: 220px;
-    margin: 13px
-  `
+  height: auto;
+  max-width: 400px;
+  max-height: 220px;
+  margin: 30px;
+  position: relative;
+`
   
 const MainContainer = styled.div`
   display: flex;
@@ -128,10 +178,21 @@ const TitleContainer = styled.div`
   heigth: 100vh
 `
 
-const ProjectTitle = styled.div`
+const PictureTitle = styled.h3`
   font-family: 'PT Sans', sans-serif;
   font-size: 25px;
   font-weight: bolder;
+`
+ 
+const ProjectTitle = styled.h2`
+font-family: 'PT Sans', sans-serif;
+font-size: 25px;
+font-weight: bolder;
+`
+
+const PictureDescription = styled.h4`
+  font-family: 'PT Sans', sans-serif;
+  font-size: 16px;
 `
 
 const DescriptionContainer = styled.div`
