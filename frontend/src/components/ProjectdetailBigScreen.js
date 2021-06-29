@@ -131,20 +131,20 @@ const ImageBox = styled.div`
 `
 
 const TitleOverlay = styled.div`
-  color: white;
+  color: black;
   position: absolute;
   top:0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.25);
+  background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   opacity: 0;
   transition: opacity 0.4s;
     :hover{
-      opacity: 1;
+      opacity: 0.6;
     } 
 `
 
@@ -153,13 +153,13 @@ const ImageContainer = styled.section`
   flex-direction: column;
   align-items: center;
   height: auto;
-  width: 100%;
+  width: auto;
 `
 
 const ProjectImage = styled.img`
   display:block;
   height: auto;
-  max-width: 400px;
+  max-width: 450px;
   max-height: 220px;
   margin: 30px;
   position: relative;
@@ -179,15 +179,15 @@ const TitleContainer = styled.div`
 `
 
 const PictureTitle = styled.h3`
-  font-family: 'PT Sans', sans-serif;
+  font-family: 'Archivo', sans-serif;;
   font-size: 25px;
   font-weight: bolder;
 `
  
 const ProjectTitle = styled.h2`
-font-family: 'PT Sans', sans-serif;
-font-size: 25px;
-font-weight: bolder;
+  font-family: 'Archivo', sans-serif;;
+  font-size: 25px;
+  font-weight: bolder;åß
 `
 
 const PictureDescription = styled.h4`
@@ -196,7 +196,7 @@ const PictureDescription = styled.h4`
 `
 
 const DescriptionContainer = styled.div`
-  font-family: 'PT Sans', sans-serif;
+  'Heebo', sans-serif;
   font-size: 18px;
   text-align: justify;
   width: 50vw;
@@ -238,14 +238,14 @@ const SingleLearningsBox = styled.div`
 `
 
 const TitleLearning = styled.div`
-  font-family: 'PT Sans', sans-serif;
+  font-family: 'Archivo', sans-serif;;
   font-size: 30px;
   font-weight: bolder;
   margin-top: 15px;
 `
 
 const Learnings = styled.p`
-  font-family: 'PT Sans', sans-serif;
+  'PT Sans', sans-serif;
   font-size: 18px;
   margin-left: 5px
 `

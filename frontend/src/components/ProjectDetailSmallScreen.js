@@ -74,13 +74,13 @@ const TitleContainer = styled.div`
 `
 
 const ProjectTitle = styled.div`
-  font-family: 'PT Sans', sans-serif;
+  font-family: 'Heebo', sans-serif;
   font-size: 18px;
   font-weight: bolder;
 `
 
 const DescriptionContainer = styled.div`
-  font-family: 'PT Sans', sans-serif;
+  font-family: 'Heebo', sans-serif;
   font-size: 15px;
   text-align: justify;
     @media(min-width: 768px){
@@ -99,14 +99,14 @@ const SingleLearningsBox = styled.div`
 `
 
 const TitleLearning = styled.div`
-  font-family: 'PT Sans', sans-serif;
+  font-family: 'Heebo', sans-serif;
   font-size: 28px;
   font-weight: bolder;
   margin-top: 15px;
 `
 
 const Learnings = styled.p`
-  font-family: 'PT Sans', sans-serif;
+  font-family: 'Heebo', sans-serif;
   font-size: 15px;
   margin-left: 5px
 `

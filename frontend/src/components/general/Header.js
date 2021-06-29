@@ -30,7 +30,7 @@ const Header = () => {
         <Navigation>
           <Link to="/projects">projects</Link>
           <CurrentProject>
-            {projectTitle && projectTitle.title}.
+            {projectTitle && projectTitle.title}
           </CurrentProject>
         </Navigation>
         <Navigation>
@@ -45,7 +45,7 @@ const Header = () => {
 }
 
 const CurrentProject = styled.h4`
-  font-family: 'PT Sans', sans-serif;
+  font-family: 'Archivo', sans-serif;;
   font-size: 11px;
   position: absolute;
   top: 55px;
@@ -71,7 +71,7 @@ const HeaderContainer = styled.header`
 `
 
 const HeaderTitle = styled.h1`
-  font-family:'PT Sans', sans-serif;;
+  font-family:'Archivo', sans-serif;;;
   font-size: 15px;
   margin-left: 15px;
     @media(min-width: 768px){
@@ -90,13 +90,12 @@ const NavigationContainer = styled.nav`
   margin-right: 15px;
   text-align: center;
   .active {
-    color: white;
-    background: black;
+    border-top: 1px solid black
   }
 `
 
 const Navigation = styled.div`
-  font-family:'PT Sans', sans-serif;;
+  font-family:'Archivo', sans-serif;;;
   display: flex;
   flex-direction: column;
   font-size: 13px;
@@ -119,8 +118,6 @@ const Navigation = styled.div`
     :hover {
       opacity: 0.6;
       transition: 0.2s;
-      background: black;
-      color: white;
     }
   `
 
