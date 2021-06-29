@@ -73,7 +73,7 @@ const Image = styled.img`
 
 const AboutText = styled.p`
   font-family: 'Heebo', sans-serif;
-  font-size: 13px;
+  font-size: 12px;
   text-align: justify;
   width: 70%;
   margin-top: 8px;

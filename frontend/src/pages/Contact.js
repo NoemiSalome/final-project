@@ -62,7 +62,7 @@ const ContentContainer = styled.div`
 
 const ContactContainer = styled.div`
   font-family: 'Heebo', sans-serif;
-  font-size: 15px;
+  font-size: 12px;
   text-align: right;
   border-left: 1px solid black;
   height: 55vh;
@@ -104,7 +104,7 @@ const ProjectLine = styled.div`
 
 const MainTitle = styled.h1`
   font-family: 'Heebo', sans-serif;
-  font-size: 15px;
+  font-size: 12px;
   margin-left: 8px;
     @media(min-width: 768px){
       font-size: 18px;

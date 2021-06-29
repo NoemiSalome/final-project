@@ -76,14 +76,7 @@ const Project = () => {
   )
 }
 
-const ProjectImage = styled.img`
-display:block;
-  height: auto;
-  width: auto;
-  max-width: 400px;
-  max-height: 220px;
-  margin: 13px
-`
+
 
 const MainContainer = styled.div`
   display: flex;
@@ -91,19 +84,20 @@ const MainContainer = styled.div`
   width: 100vw;
 `
 
-const PictureContainer = styled.div`
-  width = 50%;
-  display: flex;
-  flex-direcion: column;
+const ProjectLine = styled.div`
+  border-bottom: 1px solid black;
+  width: 30%;
+    @media(min-width: 1024px){
+      width: 15%;
+    }
+    @media(min-width: 1024px){
+      border-bottom: 2px solid black;
+    }
 `
 
-const ProjectBox = styled.section`
-  display: flex;
-  align-items: center;
-  margin-bottom: 70px;
-  @media(min-width: 1024px){
-    margin: 100px 0;
-  }
+const ProjectLink = styled(Link)`
+  color: black;
+  text-decoration: none;
 `
 
 const ProjectContainer = styled.div`
@@ -122,6 +116,31 @@ const ProjectContainer = styled.div`
     }
 `
 
+const ProjectBox = styled.section`
+  display: flex;
+  align-items: center;
+  margin-bottom: 70px;
+  @media(min-width: 1024px){
+    margin: 100px 0;
+  }
+`
+
+const MainTitle = styled.h1`
+  font-family: 'Heebo', sans-serif;
+  font-size: 12px;
+  height: 100%;
+  margin-left: 4px;
+    @media(min-width: 768px){
+      font-size: 18px;
+    }
+    @media(min-width: 1024px){
+      font-size: 22px;
+      font-weight: bold;
+    }
+`
+
+
+
 const ImageContainer = styled.div`
 display: none;
   @media (min-width: 1024px) {
@@ -134,34 +153,19 @@ display: none;
   } 
 `
 
-const ProjectLine = styled.div`
-  border-bottom: 1px solid black;
-  width: 30%;
-    @media(min-width: 1024px){
-      width: 15%;
-    }
-    @media(min-width: 1024px){
-      border-bottom: 2px solid black;
-    }
+const ProjectImage = styled.img`
+  display:block;
+  height: auto;
+  width: auto;
+  max-width: 400px;
+  max-height: 220px;
+  margin: 13px
 `
 
-const MainTitle = styled.h1`
-  font-family: 'Heebo', sans-serif;
-  font-size: 15px;
-  height: 100%;
-  margin-left: 4px;
-    @media(min-width: 768px){
-      font-size: 18px;
-    }
-    @media(min-width: 1024px){
-      font-size: 22px;
-      font-weight: bold;
-    }
-`
-
-const ProjectLink = styled(Link)`
-  color: black;
-  text-decoration: none;
+const PictureContainer = styled.div`
+  width = 50%;
+  display: flex;
+  flex-direcion: column;
 `
 
 export default Project

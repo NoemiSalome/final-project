@@ -11,7 +11,7 @@ const Home = () => {
         <ContentContainer>
           <HomeTitle>HOW</HomeTitle>
           <HomeSubTitleContainer>
-            <img src='' alt='line-one' /><HomeSubTitle>i got to know the world of architecture</HomeSubTitle>
+            <HomeSubTitle>i got to know the world of architecture</HomeSubTitle>
             <HomeSubTitle>i got through three year of design studies</HomeSubTitle>
             <HomeSubTitle>i got prepared for the next step</HomeSubTitle>
           </HomeSubTitleContainer>

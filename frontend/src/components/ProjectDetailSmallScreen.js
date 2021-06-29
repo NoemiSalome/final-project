@@ -75,27 +75,26 @@ const TitleContainer = styled.div`
 
 const ProjectTitle = styled.div`
   font-family: 'Heebo', sans-serif;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: bolder;
 `
 
 const DescriptionContainer = styled.div`
   font-family: 'Heebo', sans-serif;
-  font-size: 15px;
+  font-size: 12px;
   text-align: justify;
-    @media(min-width: 768px){
-      margin-bottom: 10px;
-    }
+  margin-bottom: 10px;
 `
 
 const LearningsContainer = styled.div`
-  margin: 10px 0;
+  margin: 15px 0;
   border-left: 1px solid black;
 `
+
 const SingleLearningsBox = styled.div`
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 `
 
 const TitleLearning = styled.div`
@@ -107,7 +106,7 @@ const TitleLearning = styled.div`
 
 const Learnings = styled.p`
   font-family: 'Heebo', sans-serif;
-  font-size: 15px;
+  font-size: 12px;
   margin-left: 5px
 `
 const LearningsLine = styled.div`

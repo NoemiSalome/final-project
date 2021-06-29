@@ -46,9 +46,9 @@ const Header = () => {
 
 const CurrentProject = styled.h4`
   font-family: 'Archivo', sans-serif;
-  font-size: 11px;
+  font-size: 6px;
   position: absolute;
-  top: 55px;
+  top: 38px;
     @media(min-width: 768px){
       font-size: 16px;
       top: 64px;
@@ -60,11 +60,11 @@ const CurrentProject = styled.h4`
 
 const HeaderContainer = styled.header`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   width: 100vw;
   height: 80px;
-  margin-bottom: 30px;
+  margin: 15px 0 ;
     @media(min-width: 1024px){
       height: 60px;
     }
@@ -85,7 +85,7 @@ const HeaderTitle = styled.h1`
 
 const NavigationContainer = styled.nav`
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   width: 50%;
   margin-right: 15px;
   text-align: center;
@@ -98,7 +98,7 @@ const Navigation = styled.div`
   font-family:'Archivo', sans-serif;
   display: flex;
   flex-direction: column;
-  font-size: 13px;
+  font-size: 10px;
   margin-left: 5px;
   text-decoration: none;
   color: black;
