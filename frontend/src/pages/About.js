@@ -78,7 +78,7 @@ const AboutText = styled.p`
   width: 70%;
   margin-top: 8px;
     @media(min-width: 768px){
-      font-size: 18px;
+      font-size: 14px;
     }
     @media(min-width: 1024px){
       width: 620px;

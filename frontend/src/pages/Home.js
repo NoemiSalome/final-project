@@ -43,7 +43,7 @@ const HomeTitle = styled.h1`
   font-family:'Archivo', sans-serif;
   font-size: 30px;
     @media(min-width: 768px){
-      font-size: 50px;
+      font-size: 40px;
       margin: 0 0 20px 50px
     }
     @media(min-width: 1024px){
@@ -63,7 +63,7 @@ const HomeSubTitle = styled.h2`
   margin-bottom: 4px;
   font-family:'Heebo', sans-serif;
     @media(min-width: 768px){
-      font-size: 18px;
+      font-size: 16px;
       margin: 0 70px 10px
     }
     @media(min-width: 1024px){

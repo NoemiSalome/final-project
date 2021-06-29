@@ -76,8 +76,6 @@ const Project = () => {
   )
 }
 
-
-
 const MainContainer = styled.div`
   display: flex;
   flex-direction: row;
@@ -131,7 +129,7 @@ const MainTitle = styled.h1`
   height: 100%;
   margin-left: 4px;
     @media(min-width: 768px){
-      font-size: 18px;
+      font-size: 15px;
     }
     @media(min-width: 1024px){
       font-size: 22px;
@@ -139,10 +137,8 @@ const MainTitle = styled.h1`
     }
 `
 
-
-
 const ImageContainer = styled.div`
-display: none;
+  display: none;
   @media (min-width: 1024px) {
     display: flex;
     flex-wrap: wrap;

@@ -50,8 +50,8 @@ const CurrentProject = styled.h4`
   position: absolute;
   top: 38px;
     @media(min-width: 768px){
-      font-size: 16px;
-      top: 64px;
+      font-size: 12px;
+      top: 48px;
     }
     @media(min-width: 1024px){
       font-size: 16px;
@@ -75,7 +75,7 @@ const HeaderTitle = styled.h1`
   font-size: 15px;
   margin-left: 15px;
     @media(min-width: 768px){
-      font-size: 30px
+      font-size: 25px
     }
     @media(min-width: 1024px){
       font-size: 23px;
@@ -104,7 +104,7 @@ const Navigation = styled.div`
   color: black;
   width: 110px;
     @media(min-width: 768px){
-      font-size: 22px
+      font-size: 18px
     }
     @media(min-width:1024px){
       margin-left: 22px

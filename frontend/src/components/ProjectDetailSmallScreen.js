@@ -43,7 +43,6 @@ const ProjectDetail = () => {
             
             <TitleLearning>how to</TitleLearning>
             <LearningsContainer>
-              
               {projectDetail.learnings && projectDetail.learnings.map((learning) => (
               <SingleLearningsBox>
                 <LearningsLine></LearningsLine>
@@ -65,7 +64,7 @@ const MainContainer = styled.div`
   margin: 0 25px;
   padding: 10px;
     @media(min-width: 768px){
-      margin: 100px;
+      margin: 60px 100px;
     }
 `
 
@@ -77,6 +76,9 @@ const ProjectTitle = styled.div`
   font-family: 'Heebo', sans-serif;
   font-size: 15px;
   font-weight: bolder;
+  @media(min-width: 768px){
+    font-size: 18px;
+  }
 `
 
 const DescriptionContainer = styled.div`
@@ -84,10 +86,14 @@ const DescriptionContainer = styled.div`
   font-size: 12px;
   text-align: justify;
   margin-bottom: 10px;
+  @media(min-width: 768px){
+    margin-bottom: 25px;
+    font-size: 14px;
+  }
 `
 
 const LearningsContainer = styled.div`
-  margin: 15px 0;
+  margin: 20px 0;
   border-left: 1px solid black;
 `
 
@@ -95,6 +101,9 @@ const SingleLearningsBox = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 30px;
+  @media(min-width: 768px){
+    margin-bottom: 45px;
+  }
 `
 
 const TitleLearning = styled.div`
