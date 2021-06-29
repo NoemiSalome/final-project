@@ -82,7 +82,6 @@ const ProjectDetailBigScreen = () => {
                 </LearningsBox>
               </LearningsContainer>
               <ImageContainer>
-
                 {projectDetail.images && projectDetail.images.map((image) => (
                   <>
                   <ImageBox>
@@ -207,16 +206,15 @@ const LearningsLine = styled.div`
 
 const ImageBox = styled.div`
   position: relative;
-  width: 60%;
   display: flex;
-  justify-content: center;
+
 `
 
 const HoverContent = styled.div`
   display: flex;
-  justify-content: center;
   flex-direction: column;
   text-align: center;
+  width: 80%
 `
 
 const TitleOverlay = styled.div`
