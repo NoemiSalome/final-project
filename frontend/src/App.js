@@ -22,6 +22,5 @@ export const App = () => {
         </Switch>
       </BrowserRouter>
     </ParallaxProvider>
-
   )
 }

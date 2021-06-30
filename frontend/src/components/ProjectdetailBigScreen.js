@@ -1,13 +1,11 @@
 import React, { useEffect, useState, useRef } from 'react'
 import { useParams } from 'react-router-dom'
 import styled from 'styled-components/macro'
-import { BsChevronDown, BsChevronUp } from 'react-icons/bs' 
 import imageUrlBuilder from '@sanity/image-url'
-import { Parallax } from 'react-scroll-parallax'
+import Rellax from 'rellax'
 
 import sanityClient from '../client.js'
 import Header from 'components/general/Header'
-
 
 const builder = imageUrlBuilder(sanityClient)
 function urlFor(source) {
@@ -17,10 +15,9 @@ function urlFor(source) {
 const ProjectDetailBigScreen = () => {
   const [projectDetail, setProjectDetail] = useState([])
   const { slug } = useParams()
-  const projectRef = useRef()
   const mainRef = useRef()
-  const onChevronClickDown = () => {projectRef.current.scrollIntoView({ behavior: 'smooth' })}
-  const onChevronClickUp = () => {mainRef.current.scrollIntoView({ behavior: 'smooth' })}
+  var rellax = new Rellax('.rellax')
+  const onButtonClick = () => {mainRef.current.scrollIntoView({ behavior: 'smooth' })}
 
   useEffect(() => {
   
@@ -49,12 +46,8 @@ const ProjectDetailBigScreen = () => {
 
 		<>
 			<Header />
-      <Parallax 
-        // className='parallax-scrolling'
-        // layers={[]}
-        >
-          <MainContainer>
-            <FirstHalfPageContainer ref={mainRef}>
+          <MainContainer >
+            <FirstHalfPageContainer ref={mainRef} className='rellax' data-rellax-speed='3' horizontal='true'>
               <TitleContainer>
                 <ProjectTitle>{projectDetail.semester}</ProjectTitle>
                 <ProjectTitle>{projectDetail.studio}</ProjectTitle>
@@ -62,15 +55,10 @@ const ProjectDetailBigScreen = () => {
                   {projectDetail.description}
                 </DescriptionContainer>
               </TitleContainer>
-              <BsChevronDown 
-                size={32} 
-                onClick={onChevronClickDown}
-                style={{ paddingLeft: 20 }}
-              />
             </FirstHalfPageContainer>
             
-            <SecondHalfPageContainer ref={projectRef}>
-              <LearningsContainer>
+            <SecondHalfPageContainer>
+              <LearningsContainer className='rellax' data-rellax-speed='1'>
                 <TitleLearning>how to</TitleLearning>
                 <LearningsBox>
                   {projectDetail.learnings && projectDetail.learnings.map((learning) => (
@@ -81,7 +69,7 @@ const ProjectDetailBigScreen = () => {
                   ))}
                 </LearningsBox>
               </LearningsContainer>
-              <ImageContainer>
+              <ImageContainer className='rellax' data-rellax-speed='6'>
                 {projectDetail.images && projectDetail.images.map((image) => (
                   <>
                   <ImageBox>
@@ -95,22 +83,15 @@ const ProjectDetailBigScreen = () => {
                         <PictureTitle>{image.title}</PictureTitle>
                         <PictureDescription>{image.description}</PictureDescription>
                       </HoverContent>
-                    </TitleOverlay>  
-                
+                    </TitleOverlay> 
                   </ImageBox>
                   </>
                 ))}
-                
+                <UpButton onClick={onButtonClick}>Take me Up.</UpButton>
               </ImageContainer>
-
-              <BsChevronUp 
-                size={32} 
-                onClick={onChevronClickUp}
-                style={{ paddingLeft: 20 }} 
-              />
             </SecondHalfPageContainer>
+
           </MainContainer>
-      </Parallax>
 		</>
 		)
 	}	
@@ -250,6 +231,17 @@ const ProjectImage = styled.img`
   max-height: 220px;
   margin: 30px;
   position: relative;
+`
+
+const UpButton = styled.button`
+    width: 150px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid black;
+    padding: 10px 0;
+    font-family: 'Archivo', sans-serif;
+    font-size: 15px;
+    margin-top: 250px;
 `
 
 export default ProjectDetailBigScreen
