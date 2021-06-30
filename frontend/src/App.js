@@ -6,12 +6,12 @@ import Project from 'pages/Project'
 import ProjectDetail from 'pages/Projectdetail'
 import About from 'pages/About'
 import Contact from 'pages/Contact'
-import { ParallaxProvider } from 'react-scroll-parallax'
+
 
 export const App = () => {
 
   return (
-    <ParallaxProvider>
+
       <BrowserRouter>
         <Switch>
           <Route component={Home} path='/' exact />
@@ -21,6 +21,6 @@ export const App = () => {
           <Route component={Contact} path='/contact' />
         </Switch>
       </BrowserRouter>
-    </ParallaxProvider>
+
   )
 }

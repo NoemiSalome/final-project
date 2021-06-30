@@ -73,12 +73,13 @@ const HeaderContainer = styled.header`
 const HeaderTitle = styled.h1`
   font-family:'Archivo', sans-serif;
   font-size: 15px;
-  margin-left: 15px;
+  padding-left: 15px;
     @media(min-width: 768px){
       font-size: 25px
     }
     @media(min-width: 1024px){
       font-size: 28px;
+      padding-left: 40px;
     }
 `
 
@@ -86,13 +87,12 @@ const NavigationContainer = styled.nav`
   display: flex;
   justify-content: center;
   width: 50%;
-  margin-right: 15px;
   text-align: center;
   .active {
     border-top: 1px solid black
   }
   @media(min-width: 1024px){
-    width: 40%;
+    width: 30%;
   }
 `
 
@@ -101,7 +101,7 @@ const Navigation = styled.div`
   display: flex;
   flex-direction: column;
   font-size: 10px;
-  margin-left: 5px;
+  padding-left: 5px;
   text-decoration: none;
   color: black;
   width: 110px;
@@ -109,7 +109,7 @@ const Navigation = styled.div`
       font-size: 18px
     }
     @media(min-width:1024px){
-      margin-left: 22px
+      padding-left: 22px
     }
   `
 

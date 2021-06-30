@@ -6,8 +6,8 @@ import Header from 'components/general/Header'
 const Home = () => {
   return (
     <>
+    <Header />
       <MainContainer>
-        <Header />
         <ContentContainer>
           <HomeTitle>HOW</HomeTitle>
           <HomeSubTitleContainer>
@@ -22,10 +22,7 @@ const Home = () => {
 }
 
 const MainContainer = styled.div`
-  height: 100vh
-    @media(min-width: 1024px){
-      height: 60vh;
-    }
+  height: 100vh;
 `
 
 const ContentContainer = styled.div`

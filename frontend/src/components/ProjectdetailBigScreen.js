@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import styled from 'styled-components/macro'
 import imageUrlBuilder from '@sanity/image-url'
 import Rellax from 'rellax'
@@ -8,16 +8,16 @@ import sanityClient from '../client.js'
 import Header from 'components/general/Header'
 
 const builder = imageUrlBuilder(sanityClient)
-function urlFor(source) {
-  return builder.image(source)
-}
+  function urlFor(source) {
+    return builder.image(source)
+  }
 
 const ProjectDetailBigScreen = () => {
   const [projectDetail, setProjectDetail] = useState([])
   const { slug } = useParams()
   const mainRef = useRef()
   var rellax = new Rellax('.rellax')
-  const onButtonClick = () => {mainRef.current.scrollIntoView({ behavior: 'smooth' })}
+  const UpButtonClick = () => {mainRef.current.scrollIntoView({ behavior: 'smooth' })}
 
   useEffect(() => {
   
@@ -46,55 +46,62 @@ const ProjectDetailBigScreen = () => {
 
 		<>
 			<Header />
-          <MainContainer >
-            <FirstHalfPageContainer ref={mainRef} className='rellax' data-rellax-speed='3' horizontal='true'>
-              <TitleContainer>
-                <ProjectTitle>{projectDetail.semester}</ProjectTitle>
-                <ProjectTitle>{projectDetail.studio}</ProjectTitle>
-                <DescriptionContainer>
-                  {projectDetail.description}
-                </DescriptionContainer>
-              </TitleContainer>
-            </FirstHalfPageContainer>
-            
-            <SecondHalfPageContainer>
-              <LearningsContainer className='rellax' data-rellax-speed='1'>
-                <TitleLearning>how to</TitleLearning>
-                <LearningsBox>
-                  {projectDetail.learnings && projectDetail.learnings.map((learning) => (
-                    <SingleLearningsBox>
-                      <LearningsLine></LearningsLine>
-                      <Learnings>{learning}</Learnings>
-                    </SingleLearningsBox>
-                  ))}
-                </LearningsBox>
-              </LearningsContainer>
-              <ImageContainer className='rellax' data-rellax-speed='6'>
-                {projectDetail.images && projectDetail.images.map((image) => (
-                  <>
-                  <ImageBox>
-                  <ProjectImage 
-                      src={urlFor(image).url()}
-                      alt={image.alt}
-                      key={image.url}
-                    />
-                     <TitleOverlay>
-                      <HoverContent>
-                        <PictureTitle>{image.title}</PictureTitle>
-                        <PictureDescription>{image.description}</PictureDescription>
-                      </HoverContent>
-                    </TitleOverlay> 
-                  </ImageBox>
-                  </>
+        <MainContainer >
+          <FirstHalfPageContainer ref={mainRef} className='rellax' data-rellax-speed='3' horizontal='true'>
+            <TitleContainer>
+              <BackLink to={'/projects'}>
+                <DirectionButton >Take me BACK.</DirectionButton>
+              </BackLink>
+              <ProjectTitle>{projectDetail.semester}</ProjectTitle>
+              <ProjectTitle>{projectDetail.studio}</ProjectTitle>
+              <DescriptionContainer>
+                {projectDetail.description}
+              </DescriptionContainer>
+            </TitleContainer>
+          </FirstHalfPageContainer>         
+          <SecondHalfPageContainer>
+            <LearningsContainer className='rellax' data-rellax-speed='1'>
+              <TitleLearning>how to</TitleLearning>
+              <LearningsBox>
+                {projectDetail.learnings && projectDetail.learnings.map((learning) => (
+                  <SingleLearningsBox>
+                    <LearningsLine></LearningsLine>
+                    <Learnings>{learning}</Learnings>
+                  </SingleLearningsBox>
                 ))}
-                <UpButton onClick={onButtonClick}>Take me Up.</UpButton>
-              </ImageContainer>
-            </SecondHalfPageContainer>
-
-          </MainContainer>
-		</>
+              </LearningsBox>
+            </LearningsContainer>
+            <ImageContainer className='rellax' data-rellax-speed='6'>
+              {projectDetail.images && projectDetail.images.map((image) => (
+                <>
+                <ImageBox>
+                <ProjectImage 
+                    src={urlFor(image).url()}
+                    alt={image.alt}
+                    key={image.url}
+                  />
+                    <TitleOverlay>
+                    <HoverContent>
+                      <PictureTitle>{image.title}</PictureTitle>
+                      <PictureDescription>{image.description}</PictureDescription>
+                    </HoverContent>
+                  </TitleOverlay> 
+                </ImageBox>
+                </>
+              ))}
+              
+            </ImageContainer>
+              <DirectionButton onClick={UpButtonClick} className='rellax' data-rellax-speed='-7'>Take me UP.</DirectionButton>
+          </SecondHalfPageContainer>
+        </MainContainer>
+		  </>
 		)
 	}	
+  
+const BackLink = styled(Link)`
+  margin-bottom: 20px;
+  align-self: flex-end;
+`
 
 const MainContainer = styled.div`
   display: flex;
@@ -105,7 +112,6 @@ const MainContainer = styled.div`
 const TitleContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin-right: 20px
   heigth: 100vh
 `
 
@@ -133,11 +139,11 @@ const DescriptionContainer = styled.div`
 `
 
 const FirstHalfPageContainer = styled.section`
-	height: 100vh;
+	height: 90vh;
 	display: flex;
 	flex-direction:row;
 	justify-content: center;
-  align-items: center
+  align-items: center;
 `
 
 const SecondHalfPageContainer = styled.section`
@@ -233,15 +239,15 @@ const ProjectImage = styled.img`
   position: relative;
 `
 
-const UpButton = styled.button`
+const DirectionButton = styled.button`
     width: 150px;
+    height: 35px;
     background: transparent;
     border: none;
     border-bottom: 1px solid black;
     padding: 10px 0;
     font-family: 'Archivo', sans-serif;
     font-size: 15px;
-    margin-top: 250px;
 `
 
 export default ProjectDetailBigScreen
