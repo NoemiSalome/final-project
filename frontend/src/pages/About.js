@@ -12,12 +12,14 @@ function urlFor(source) {
 
 const About = () => {
   const [aboutInformation, setAboutInformation] = useState([])
+  const [activeImage, setActiveImage] = useState(0)
+
   useEffect(() => {
     sanityClient
       .fetch(
         `*[_type == 'about'] {
           aboutText,
-          images{
+          'images': images [] {
             alt,
             asset->{ url }
           }
@@ -31,10 +33,18 @@ const About = () => {
       <MainContainer>
         <Header />
         <ContentContainer>
-          <Image
-            src={urlFor(aboutInformation.images).url()}
-            alt='portrait'
-          />
+          {aboutInformation.images && aboutInformation.images.map((image, index) => (
+          <>
+            {index === activeImage && (
+              <Image
+                src={urlFor(image).url()}
+                alt={image.alt}
+                key={image.url}
+                onMouseEnter={() => {setActiveImage(1)}}
+                onMouseLeave={() => {setActiveImage(0)}}
+              />)}
+            </>
+          ))} 
           <AboutText>
             {aboutInformation.aboutText}
           </AboutText>

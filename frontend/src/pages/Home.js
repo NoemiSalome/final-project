@@ -87,6 +87,7 @@ const DirectionButton = styled.button`
     margin-right: 40px;
     @media(min-width: 768px){
       font-size: 16px;
+      width: 200px;
     }
     @media(min-width: 1024px){
       font-size: 18px;
