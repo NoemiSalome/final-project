@@ -1,6 +1,6 @@
-import React,{ useEffect, useState } from 'react'
+import React,{ useState } from 'react'
 import styled from 'styled-components/macro'
-import { NavLink } from 'react-router-dom'
+// import { NavLink } from 'react-router-dom'
 
 import ScreenNavigation from 'components/ScreenNavigation'
 

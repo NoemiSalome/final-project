@@ -6,7 +6,6 @@ import Project from 'pages/Project'
 import ProjectDetail from 'pages/Projectdetail'
 import About from 'pages/About'
 import Contact from 'pages/Contact'
-import ScreenNavigation from 'components/ScreenNavigation'
 
 export const App = () => {
 
@@ -15,7 +14,6 @@ export const App = () => {
     
       <BrowserRouter>
         <Switch>
-        {/* <ScreenNavigation /> */}
           <Route component={Home} path='/' exact />
           <Route component={ProjectDetail} path='/projects/:slug' />
           <Route component={Project} path='/projects' />

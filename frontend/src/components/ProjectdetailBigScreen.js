@@ -47,7 +47,7 @@ const ProjectDetailBigScreen = () => {
 		<>
 			<Header />
         <MainContainer >
-          <FirstHalfPageContainer ref={mainRef} className='rellax' data-rellax-speed='3' horizontal='true'>
+          <FirstHalfPageContainer ref={mainRef} className={rellax} data-rellax-speed='3' horizontal='true'>
             <TitleContainer>
               <BackLink to={'/projects'}>
                 <DirectionButton >Take me BACK.</DirectionButton>
@@ -60,7 +60,7 @@ const ProjectDetailBigScreen = () => {
             </TitleContainer>
           </FirstHalfPageContainer>         
           <SecondHalfPageContainer>
-            <LearningsContainer className='rellax' data-rellax-speed='1'>
+            <LearningsContainer className={rellax} data-rellax-speed='1'>
               <TitleLearning>how to</TitleLearning>
               <LearningsBox>
                 {projectDetail.learnings && projectDetail.learnings.map((learning) => (
@@ -71,7 +71,7 @@ const ProjectDetailBigScreen = () => {
                 ))}
               </LearningsBox>
             </LearningsContainer>
-            <ImageContainer className='rellax' data-rellax-speed='6'>
+            <ImageContainer className={rellax} data-rellax-speed='6'>
               {projectDetail.images && projectDetail.images.map((image) => (
                 <>
                 <ImageBox>
