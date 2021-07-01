@@ -96,9 +96,10 @@ const ProjectContainer = styled.div`
   margin-left: 30px;
   border-left: 1px solid black;
   padding: 50px 0;
-  width: 50%;
+  width: 80%;
     @media(min-width: 768px){
       margin: 100px;
+      width: 50%;
     }
     @media(min-width: 1024px){
       margin: 100px 0 0 100px;

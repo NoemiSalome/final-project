@@ -27,6 +27,7 @@ const ProjectDetailBigScreen = () => {
             studio,
             description,
             learnings,
+            title,
             'images': images [] {
               alt,
               title,
@@ -51,6 +52,7 @@ const ProjectDetailBigScreen = () => {
               <ProjectLink to={'/projects'}>
                 <DirectionButton >Take me BACK.</DirectionButton>
               </ProjectLink>
+              <ProjectTitle>{projectDetail.title}</ProjectTitle>
               <ProjectTitle>{projectDetail.semester}</ProjectTitle>
               <ProjectTitle>{projectDetail.studio}</ProjectTitle>
               <DescriptionContainer>
@@ -74,22 +76,22 @@ const ProjectDetailBigScreen = () => {
               {projectDetail.images && projectDetail.images.map((image) => (
                 <>
                 <ImageBox>
-                <ProjectImage 
-                    src={urlFor(image).url()}
-                    alt={image.alt}
-                    key={image.url}
-                  />
-                    <TitleOverlay>
-                    <HoverContent>
-                      <PictureTitle>{image.title}</PictureTitle>
-                      <PictureDescription>{image.description}</PictureDescription>
-                    </HoverContent>
+                  <ProjectImage 
+                      src={urlFor(image).url()}
+                      alt={image.alt}
+                      key={image.url}
+                    />
+                  <TitleOverlay>
+                  <HoverContent>
+                    <PictureTitle>{image.title}</PictureTitle>
+                    <PictureDescription>{image.description}</PictureDescription>
+                  </HoverContent>
                   </TitleOverlay> 
                 </ImageBox>
                 </>
               ))}
             </ImageContainer>
-              <DirectionButton onClick={UpButtonClick} className='rellax' data-rellax-speed='-8'>Take me UP.</DirectionButton>
+              <DirectionButton onClick={UpButtonClick} className='rellax' data-rellax-speed='-7.5'>Take me UP.</DirectionButton>
           </SecondHalfPageContainer>
         </MainContainer>
 		  </>
@@ -148,7 +150,10 @@ const SecondHalfPageContainer = styled.section`
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  margin: 0 200px 200px 200px;
+  margin: 0 0 200px 100px;
+  @media(min-width: 1400px){
+    margin: 0 200px 400px 200px;
+  }
 `
 
 const LearningsContainer = styled.div`

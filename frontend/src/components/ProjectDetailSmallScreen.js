@@ -19,6 +19,7 @@ const ProjectDetail = () => {
             studio,
             description,
             learnings,
+            title,
         }`)
   .then((data) => setProjectDetail(data[0]))
   .catch(console.error)
@@ -33,6 +34,7 @@ const ProjectDetail = () => {
           <MainContainer>
             <ImageSlider />
             <TitleContainer>
+              <ProjectTitle>{projectDetail.title}</ProjectTitle>
               <ProjectTitle>{projectDetail.semester}</ProjectTitle>
               <ProjectTitle>{projectDetail.studio}</ProjectTitle>
             </TitleContainer>
@@ -48,7 +50,6 @@ const ProjectDetail = () => {
                 <LearningsLine></LearningsLine>
                 <Learnings>{learning}</Learnings>
               </SingleLearningsBox>
-
               ))}
             </LearningsContainer>
 

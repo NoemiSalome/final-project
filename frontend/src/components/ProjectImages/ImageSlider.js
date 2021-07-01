@@ -93,15 +93,18 @@ const ImageContainer = styled.section`
   margin: 10px 0 30px;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: 60vh;
   position: relative;
 `
 
 const ProjectImage = styled.img`
-  height: auto;
-  width: 120px;
+    max-height: 200px;
+    max-width: 150px;
+    height: auto;
+    width: auto;
     @media(min-width: 768px){
-      width: 230px;
+      max-width: 230px;
+      max-height: 280px;
     }
     @media(min-width: 1024px){
       width: 300px;

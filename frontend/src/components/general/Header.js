@@ -30,12 +30,15 @@ const CircleButton = styled.button`
   border-radius: 50%;
   background-color: black;
   border: none;
-  margin: 0 40px 0 0;
+  margin-right: 15px;
   transition: scale (1);
     :hover{
       scale: 0.4;
       transition-duration: 1s;
     } 
+    @media(min-width: 1024px){
+      margin-right: 40px
+    }
 `
 
 const HeaderContainer = styled.header`
