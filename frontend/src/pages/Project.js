@@ -17,6 +17,10 @@ const Project = () => {
   const [activeImage, setActiveImage] = useState(-1)
 
   useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
+  useEffect(() => {
     sanityClient
       .fetch(
         `*[_type == 'project']| order(DateOfCompletion) {

@@ -20,6 +20,10 @@ const ProjectDetailBigScreen = () => {
   const UpButtonClick = () => {mainRef.current.scrollIntoView({ behavior: 'smooth' })}
 
   useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
+  useEffect(() => {
     sanityClient
       .fetch(
         `*[slug.current == '${slug}'] {
