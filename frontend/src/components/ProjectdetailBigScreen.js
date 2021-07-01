@@ -48,9 +48,9 @@ const ProjectDetailBigScreen = () => {
         <MainContainer >
           <FirstHalfPageContainer ref={mainRef} className='rellax' data-rellax-speed='3' horizontal='true'>
             <TitleContainer>
-              <BackLink to={'/projects'}>
+              <ProjectLink to={'/projects'}>
                 <DirectionButton >Take me BACK.</DirectionButton>
-              </BackLink>
+              </ProjectLink>
               <ProjectTitle>{projectDetail.semester}</ProjectTitle>
               <ProjectTitle>{projectDetail.studio}</ProjectTitle>
               <DescriptionContainer>
@@ -96,7 +96,7 @@ const ProjectDetailBigScreen = () => {
 		)
 	}	
   
-const BackLink = styled(Link)`
+const ProjectLink = styled(Link)`
   margin-bottom: 20px;
   align-self: flex-end;
 `
@@ -110,7 +110,7 @@ const MainContainer = styled.div`
 const TitleContainer = styled.div`
   display: flex;
   flex-direction: column;
-  heigth: 100vh
+  heigth: 100vh;
 `
 
 const PictureTitle = styled.h3`
@@ -137,7 +137,7 @@ const DescriptionContainer = styled.div`
 `
 
 const FirstHalfPageContainer = styled.section`
-	height: 90vh;
+	height: 100vh;
 	display: flex;
 	flex-direction:row;
 	justify-content: center;

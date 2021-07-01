@@ -40,7 +40,7 @@ const ScreenNavigation = props => {
       showCloseIcon={true}
     >
       <NavigationOverlay>
-        <LeftScreen>
+
           <Navigation>
             <Link to="/" exact>home</Link>
           </Navigation>
@@ -53,7 +53,7 @@ const ScreenNavigation = props => {
           <Navigation>
             <Link to="/contact">contact</Link>
           </Navigation>
-          </LeftScreen>
+
       </NavigationOverlay>
       </Modal>
 		</>
@@ -64,10 +64,6 @@ const NavigationOverlay = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
-`
-
-const LeftScreen = styled.div`
-  padding-left: 100px;
 `
 
 const Navigation = styled.div`

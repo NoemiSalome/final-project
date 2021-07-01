@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components/macro'
+import { Link } from 'react-router-dom'
+
 
 import Header from 'components/general/Header'
 
@@ -16,13 +18,16 @@ const Home = () => {
             <HomeSubTitle>i got prepared for the next step</HomeSubTitle>
           </HomeSubTitleContainer>
         </ContentContainer>
+          <ProjectLink to={'/projects'}>
+            <DirectionButton>Start the Journey</DirectionButton>
+          </ProjectLink>
       </MainContainer>
     </>
   )
 }
 
 const MainContainer = styled.div`
-  height: 100vh;
+  height: 80vh;
 `
 
 const ContentContainer = styled.div`
@@ -32,7 +37,10 @@ const ContentContainer = styled.div`
   margin: 0 20px;
   height: 80vh;
     @media(min-width: 1024px){
-      margin: 0 300px;
+      margin: 0 400px;
+    }
+    @media(min-width: 1350px){
+      margin: 0 400px;
     }
 `
 
@@ -66,6 +74,24 @@ const HomeSubTitle = styled.h2`
     @media(min-width: 1024px){
       font-size: 18px;
     }
+`
+
+const DirectionButton = styled.button`
+    width: 150px;
+    height: 35px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid black;
+    font-family: 'Archivo', sans-serif;
+    font-size: 15px;
+    margin-right: 40px
+`
+
+const ProjectLink = styled(Link)`
+  text-decoration: none;
+  width: 100vw;
+  display: flex;
+  justify-content: flex-end;
 `
 
 export default Home

@@ -31,6 +31,11 @@ const CircleButton = styled.button`
   background-color: black;
   border: none;
   margin: 0 40px 0 0;
+  transition: scale (1);
+    :hover{
+      scale: 0.4;
+      transition-duration: 1s;
+    } 
 `
 
 const HeaderContainer = styled.header`
@@ -38,8 +43,7 @@ const HeaderContainer = styled.header`
   align-items: center;
   justify-content: space-between;
   width: 100vw;
-  height: 80px;
-  margin: 15px 0;
+  height: 60px;
     @media(min-width: 1024px){
       height: 60px;
     }
