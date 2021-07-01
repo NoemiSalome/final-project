@@ -16,11 +16,10 @@ const ProjectDetailBigScreen = () => {
   const [projectDetail, setProjectDetail] = useState([])
   const { slug } = useParams()
   const mainRef = useRef()
-  var rellax = new Rellax('.rellax')
+  Rellax('.rellax')
   const UpButtonClick = () => {mainRef.current.scrollIntoView({ behavior: 'smooth' })}
 
   useEffect(() => {
-  
     sanityClient
       .fetch(
         `*[slug.current == '${slug}'] {
@@ -47,7 +46,7 @@ const ProjectDetailBigScreen = () => {
 		<>
 			<Header />
         <MainContainer >
-          <FirstHalfPageContainer ref={mainRef} className={rellax} data-rellax-speed='3' horizontal='true'>
+          <FirstHalfPageContainer ref={mainRef} className='rellax' data-rellax-speed='3' horizontal='true'>
             <TitleContainer>
               <BackLink to={'/projects'}>
                 <DirectionButton >Take me BACK.</DirectionButton>
@@ -60,7 +59,7 @@ const ProjectDetailBigScreen = () => {
             </TitleContainer>
           </FirstHalfPageContainer>         
           <SecondHalfPageContainer>
-            <LearningsContainer className={rellax} data-rellax-speed='1'>
+            <LearningsContainer className='rellax' data-rellax-speed='-1'>
               <TitleLearning>how to</TitleLearning>
               <LearningsBox>
                 {projectDetail.learnings && projectDetail.learnings.map((learning) => (
@@ -71,7 +70,7 @@ const ProjectDetailBigScreen = () => {
                 ))}
               </LearningsBox>
             </LearningsContainer>
-            <ImageContainer className={rellax} data-rellax-speed='6'>
+            <ImageContainer className='rellax' data-rellax-speed='4'>
               {projectDetail.images && projectDetail.images.map((image) => (
                 <>
                 <ImageBox>
@@ -89,9 +88,8 @@ const ProjectDetailBigScreen = () => {
                 </ImageBox>
                 </>
               ))}
-              
             </ImageContainer>
-              <DirectionButton onClick={UpButtonClick} className='rellax' data-rellax-speed='-7'>Take me UP.</DirectionButton>
+              <DirectionButton onClick={UpButtonClick} className='rellax' data-rellax-speed='-8'>Take me UP.</DirectionButton>
           </SecondHalfPageContainer>
         </MainContainer>
 		  </>
