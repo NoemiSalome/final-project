@@ -60,7 +60,6 @@ const ProjectDetail = () => {
             <ProjectLink>
               <DirectionButton onClick={UpButtonClick}>Take me UP.</DirectionButton>
             </ProjectLink>
-
           </MainContainer>
         </>
       )
