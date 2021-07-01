@@ -27,12 +27,12 @@ const styles = {
 };
 
 const ScreenNavigation = props => {
-  const { setModalVisible, modalVisible } = props;
+  const { showNavigation, setShowNavigation } = props;
   return (
 		<>
     <Modal
-      open={modalVisible}
-      onClose={() => setModalVisible(false)}
+      open={showNavigation}
+      onClose={() => setShowNavigation(false)}
       styles={styles}
       animationDuration={500}
       focusTrapped={true}

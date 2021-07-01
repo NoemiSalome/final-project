@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import React, { useEffect, useState, useRef } from 'react'
+import { useParams, Link } from 'react-router-dom'
 import styled from 'styled-components/macro'
 
 import sanityClient from '../client.js'
@@ -9,6 +9,8 @@ import ImageSlider from 'components/ProjectImages/ImageSlider'
 const ProjectDetail = () => {
   const [projectDetail, setProjectDetail] = useState([])
   const { slug } = useParams()
+  const mainRef = useRef()
+  const UpButtonClick = () => {mainRef.current.scrollIntoView({ behavior: 'smooth' })}
 
   useEffect(() => {
   
@@ -31,7 +33,10 @@ const ProjectDetail = () => {
     return (
         <>
         <Header />
-          <MainContainer>
+          <MainContainer ref={mainRef}>
+            <ProjectLink to={'/projects'}>
+              <DirectionButton >Take me BACK.</DirectionButton>
+            </ProjectLink>
             <ImageSlider />
             <TitleContainer>
               <ProjectTitle>{projectDetail.title}</ProjectTitle>
@@ -52,6 +57,9 @@ const ProjectDetail = () => {
               </SingleLearningsBox>
               ))}
             </LearningsContainer>
+            <ProjectLink>
+              <DirectionButton onClick={UpButtonClick}>Take me UP.</DirectionButton>
+            </ProjectLink>
 
           </MainContainer>
         </>
@@ -122,6 +130,21 @@ const Learnings = styled.p`
 const LearningsLine = styled.div`
   border-top: 1px solid black;
   width: 10px;
+`
+
+const ProjectLink = styled(Link)`
+  align-self: flex-end;
+  margin-bottom: 80px;
+`
+
+const DirectionButton = styled.button`
+    width: 100px;
+    height: 35px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid black;
+    font-family: 'Archivo', sans-serif;
+    font-size: 11px;
 `
 
 export default ProjectDetail

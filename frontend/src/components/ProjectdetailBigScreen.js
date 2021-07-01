@@ -91,7 +91,7 @@ const ProjectDetailBigScreen = () => {
                 </>
               ))}
             </ImageContainer>
-              <DirectionButton onClick={UpButtonClick} className='rellax' data-rellax-speed='-7.5'>Take me UP.</DirectionButton>
+              <DirectionButton onClick={UpButtonClick} className='rellax' data-rellax-speed='-7'>Take me UP.</DirectionButton>
           </SecondHalfPageContainer>
         </MainContainer>
 		  </>
@@ -152,7 +152,7 @@ const SecondHalfPageContainer = styled.section`
   justify-content: flex-start;
   margin: 0 0 200px 100px;
   @media(min-width: 1400px){
-    margin: 0 200px 400px 200px;
+    margin: 0 160px 400px 160px;
   }
 `
 

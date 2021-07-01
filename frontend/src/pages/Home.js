@@ -83,8 +83,14 @@ const DirectionButton = styled.button`
     border: none;
     border-bottom: 1px solid black;
     font-family: 'Archivo', sans-serif;
-    font-size: 15px;
-    margin-right: 40px
+    font-size: 12px;
+    margin-right: 40px;
+    @media(min-width: 768px){
+      font-size: 16px;
+    }
+    @media(min-width: 1024px){
+      font-size: 18px;
+    }
 `
 
 const ProjectLink = styled(Link)`

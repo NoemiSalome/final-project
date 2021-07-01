@@ -95,7 +95,7 @@ const ProjectLink = styled(Link)`
 const ProjectContainer = styled.div`
   margin-left: 30px;
   border-left: 1px solid black;
-  padding: 50px 0;
+  padding: 80px 0;
   width: 80%;
     @media(min-width: 768px){
       margin: 100px;

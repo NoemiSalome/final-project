@@ -4,22 +4,19 @@ import styled from 'styled-components/macro'
 import ScreenNavigation from 'components/ScreenNavigation'
 
 const Header = () => {
-  const [modalVisible, setModalVisible] = useState(false);
+  const [showNavigation, setShowNavigation] = useState(false);
 
 
   return (
     <>
-
       <HeaderContainer>
         <HeaderTitle>ANINA SCHMID.</HeaderTitle> 
-        <CircleButton onClick={() => setModalVisible(true)}></CircleButton>
+        <CircleButton onClick={() => setShowNavigation(true)}></CircleButton>
       </HeaderContainer>              
       <ScreenNavigation
-          modalVisible={modalVisible}
-          setModalVisible={setModalVisible}
+          showNavigation={showNavigation}
+          setShowNavigation={setShowNavigation}
         />
-
-    
     </>
   )
 }
@@ -31,11 +28,26 @@ const CircleButton = styled.button`
   background-color: black;
   border: none;
   margin-right: 15px;
-  transition: scale (1);
+	box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+	transform: scale(1);
+	animation: pulse 2s infinite;
     :hover{
       scale: 0.4;
       transition-duration: 1s;
     } 
+    @keyframes pulse {
+      0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+      }
+      70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+      }
+      100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+      }
     @media(min-width: 1024px){
       margin-right: 40px
     }
