@@ -3,6 +3,7 @@ import styled from 'styled-components/macro'
 
 import sanityClient from '../client'
 import Header from 'components/general/Header'
+import Loader from 'components/general/Loader'
 
 const Contact = () => {
   const [contactData, setContactData] = useState([])
@@ -19,6 +20,10 @@ const Contact = () => {
       .then((data) => setContactData(data[0]))
       .catch(console.error)
   }, [])
+
+  if (!contactData) {
+    return <Loader />;
+  }
 
   return (
     <>

@@ -4,6 +4,7 @@ import imageUrlBuilder from '@sanity/image-url'
 
 import sanityClient from '../client.js'
 import Header from 'components/general/Header'
+import Loader from 'components/general/Loader'
 
 const builder = imageUrlBuilder(sanityClient)
 function urlFor(source) {
@@ -27,6 +28,10 @@ const About = () => {
       .then((data) => setAboutInformation(data[0]))
       .catch(console.error)
   }, [])
+
+  if (!aboutInformation) {
+    return <Loader />;
+  }
 
   return (
     <>

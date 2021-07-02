@@ -6,6 +6,7 @@ import Rellax from 'rellax'
 
 import sanityClient from '../client.js'
 import Header from 'components/general/Header'
+import Loader from 'components/general/Loader'
 
 const builder = imageUrlBuilder(sanityClient)
   function urlFor(source) {
@@ -42,6 +43,10 @@ const ProjectDetailBigScreen = () => {
   .then((data) => setProjectDetail(data[0]))
   .catch(console.error)
 }, [slug])
+
+  if (!projectDetail) {
+    return <Loader />;
+  }
 
   return (
   <>

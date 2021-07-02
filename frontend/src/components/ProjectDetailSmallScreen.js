@@ -5,6 +5,7 @@ import styled from 'styled-components/macro'
 import sanityClient from '../client.js'
 import Header from 'components/general/Header'
 import ImageSlider from 'components/ProjectImages/ImageSlider'
+import Loader from 'components/general/Loader'
 
 const ProjectDetail = () => {
   const [projectDetail, setProjectDetail] = useState([])
@@ -29,6 +30,10 @@ const ProjectDetail = () => {
   .then((data) => setProjectDetail(data[0]))
   .catch(console.error)
 }, [slug])
+
+  if (!projectDetail) {
+    return <Loader />;
+  }
 
   return (
     <>
