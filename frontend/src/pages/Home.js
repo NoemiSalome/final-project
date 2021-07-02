@@ -2,13 +2,13 @@ import React from 'react'
 import styled from 'styled-components/macro'
 import { Link } from 'react-router-dom'
 
-
 import Header from 'components/general/Header'
 
 const Home = () => {
+
   return (
     <>
-    <Header />
+      <Header />
       <MainContainer>
         <ContentContainer>
           <HomeTitle>HOW</HomeTitle>
@@ -18,19 +18,19 @@ const Home = () => {
             <HomeSubTitle>i got prepared for the next step</HomeSubTitle>
           </HomeSubTitleContainer>
         </ContentContainer>
-          <ProjectLink to={'/projects'}>
-            <DirectionButton>Start the Journey</DirectionButton>
-          </ProjectLink>
+        <ProjectLink to={'/projects'}>
+          <DirectionButton>Start the Journey</DirectionButton>
+        </ProjectLink>
       </MainContainer>
     </>
   )
 }
 
-const MainContainer = styled.div`
+const MainContainer = styled.section`
   height: 80vh;
 `
 
-const ContentContainer = styled.div`
+const ContentContainer = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -76,29 +76,29 @@ const HomeSubTitle = styled.h2`
     }
 `
 
-const DirectionButton = styled.button`
-    width: 150px;
-    height: 35px;
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid black;
-    font-family: 'Archivo', sans-serif;
-    font-size: 12px;
-    margin-right: 40px;
-    @media(min-width: 768px){
-      font-size: 16px;
-      width: 200px;
-    }
-    @media(min-width: 1024px){
-      font-size: 18px;
-    }
-`
-
 const ProjectLink = styled(Link)`
   text-decoration: none;
   width: 100vw;
   display: flex;
   justify-content: flex-end;
+`
+
+const DirectionButton = styled.button`
+  width: 150px;
+  height: 35px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid black;
+  font-family: 'Archivo', sans-serif;
+  font-size: 12px;
+  margin-right: 40px;
+  @media(min-width: 768px){
+    font-size: 16px;
+    width: 200px;
+  }
+  @media(min-width: 1024px){
+    font-size: 18px;
+  }
 `
 
 export default Home

@@ -43,103 +43,65 @@ const ProjectDetailBigScreen = () => {
   .catch(console.error)
 }, [slug])
 
-    if (!ProjectDetailBigScreen) 
-      return <div>loading</div>
-  
-    return (
-
-		<>
-			<Header />
-        <MainContainer >
-          <FirstHalfPageContainer ref={mainRef} className='rellax' data-rellax-speed='3' horizontal='true'>
-            <TitleContainer>
-              <ProjectLink to={'/projects'}>
-                <DirectionButton >Take me BACK.</DirectionButton>
-              </ProjectLink>
-              <ProjectTitle>{projectDetail.title}</ProjectTitle>
-              <ProjectTitle>{projectDetail.semester}</ProjectTitle>
-              <ProjectTitle>{projectDetail.studio}</ProjectTitle>
-              <DescriptionContainer>
-                {projectDetail.description}
-              </DescriptionContainer>
-            </TitleContainer>
-          </FirstHalfPageContainer>         
-          <SecondHalfPageContainer>
-            <LearningsContainer className='rellax' data-rellax-speed='-1'>
-              <TitleLearning>how to</TitleLearning>
-              <LearningsBox>
-                {projectDetail.learnings && projectDetail.learnings.map((learning) => (
-                  <SingleLearningsBox>
-                    <LearningsLine></LearningsLine>
-                    <Learnings>{learning}</Learnings>
-                  </SingleLearningsBox>
-                ))}
-              </LearningsBox>
-            </LearningsContainer>
-            <ImageContainer className='rellax' data-rellax-speed='4'>
-              {projectDetail.images && projectDetail.images.map((image) => (
-                <>
-                <ImageBox>
-                  <ProjectImage 
-                      src={urlFor(image).url()}
-                      alt={image.alt}
-                      key={image.url}
-                    />
-                  <TitleOverlay>
+  return (
+  <>
+    <Header />
+      <MainContainer >
+        <FirstHalfPageContainer ref={mainRef} className='rellax' data-rellax-speed='3' horizontal='true'>
+          <TitleContainer>
+            <ProjectLink to={'/projects'}>
+              <DirectionButton >Take me BACK.</DirectionButton>
+            </ProjectLink>
+            <ProjectTitle>{projectDetail.title}</ProjectTitle>
+            <ProjectTitle>{projectDetail.semester}</ProjectTitle>
+            <ProjectTitle>{projectDetail.studio}</ProjectTitle>
+            <DescriptionContainer>
+              {projectDetail.description}
+            </DescriptionContainer>
+          </TitleContainer>
+        </FirstHalfPageContainer>         
+        <SecondHalfPageContainer>
+          <LearningsContainer className='rellax' data-rellax-speed='-1'>
+            <TitleLearning>how to</TitleLearning>
+            <LearningsBox>
+              {projectDetail.learnings && projectDetail.learnings.map((learning) => (
+                <SingleLearningsBox>
+                  <LearningsLine></LearningsLine>
+                  <Learnings>{learning}</Learnings>
+                </SingleLearningsBox>
+              ))}
+            </LearningsBox>
+          </LearningsContainer>
+          <ImageContainer className='rellax' data-rellax-speed='4'>
+            {projectDetail.images && projectDetail.images.map((image) => (
+              <>
+              <ImageBox>
+                <ProjectImage 
+                    src={urlFor(image).url()}
+                    alt={image.alt}
+                    key={image.url}
+                  />
+                <TitleOverlay>
                   <HoverContent>
                     <PictureTitle>{image.title}</PictureTitle>
                     <PictureDescription>{image.description}</PictureDescription>
                   </HoverContent>
-                  </TitleOverlay> 
-                </ImageBox>
-                </>
-              ))}
-            </ImageContainer>
-              <DirectionButton onClick={UpButtonClick} className='rellax' data-rellax-speed='-7'>Take me UP.</DirectionButton>
-          </SecondHalfPageContainer>
-        </MainContainer>
-		  </>
-		)
-	}	
-  
-const ProjectLink = styled(Link)`
-  margin-bottom: 20px;
-  align-self: flex-end;
-`
+                </TitleOverlay> 
+              </ImageBox>
+              </>
+            ))}
+          </ImageContainer>
+            <DirectionButton onClick={UpButtonClick} className='rellax' data-rellax-speed='-7'>Take me UP.</DirectionButton>
+        </SecondHalfPageContainer>
+      </MainContainer>
+    </>
+  )
+}	
 
-const MainContainer = styled.div`
+const MainContainer = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
-`
-
-const TitleContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  heigth: 100vh;
-`
-
-const PictureTitle = styled.h3`
-  font-family: 'Archivo', sans-serif;
-  font-size: 25px;
-`
- 
-const ProjectTitle = styled.h2`
-  font-family: 'Archivo', sans-serif;
-  font-size: 20px;
-`
-
-const PictureDescription = styled.h4`
-  font-family: 'PT Sans', sans-serif;
-  font-size: 16px;
-`
-
-const DescriptionContainer = styled.div`
-  font-family: 'PT Sans', sans-serif;
-  font-size: 17px;
-  text-align: justify;
-  width: 50vw;
-  margin-top: 10px
 `
 
 const FirstHalfPageContainer = styled.section`
@@ -155,9 +117,23 @@ const SecondHalfPageContainer = styled.section`
   flex-direction: row;
   justify-content: flex-start;
   margin: 0 0 200px 100px;
-  @media(min-width: 1400px){
-    margin: 0 160px 400px 160px;
-  }
+    @media(min-width: 1400px){
+      margin: 0 160px 400px 160px;
+    }
+`
+
+const TitleContainer = styled.section`
+  display: flex;
+  flex-direction: column;
+  heigth: 100vh;
+`
+
+const DescriptionContainer = styled.div`
+  font-family: 'PT Sans', sans-serif;
+  font-size: 17px;
+  text-align: justify;
+  width: 50vw;
+  margin-top: 10px
 `
 
 const LearningsContainer = styled.div`
@@ -180,28 +156,22 @@ const SingleLearningsBox = styled.div`
     }
 `
 
-const TitleLearning = styled.div`
-  font-family: 'Archivo', sans-serif;
-  font-size: 30px;
-  font-weight: bolder;
-  margin-top: 15px;
-`
-
-const Learnings = styled.p`
-  font-family: 'PT Sans', sans-serif;
-  font-size: 15px;
-  margin-left: 5px
-`
-
 const LearningsLine = styled.div`
   border-top: 2px solid black;
   width: 10px;
 `
 
+const ImageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+  width: auto;
+`
+
 const ImageBox = styled.div`
   position: relative;
   display: flex;
-
 `
 
 const HoverContent = styled.div`
@@ -229,12 +199,37 @@ const TitleOverlay = styled.div`
     } 
 `
 
-const ImageContainer = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: auto;
-  width: auto;
+const Learnings = styled.p`
+  font-family: 'PT Sans', sans-serif;
+  font-size: 15px;
+  margin-left: 5px
+`
+
+const TitleLearning = styled.h1`
+  font-family: 'Archivo', sans-serif;
+  font-size: 30px;
+  font-weight: bolder;
+  margin-top: 15px;
+`
+
+const ProjectTitle = styled.h2`
+  font-family: 'Archivo', sans-serif;
+  font-size: 20px;
+`
+
+const PictureTitle = styled.h3`
+  font-family: 'Archivo', sans-serif;
+  font-size: 25px;
+`
+
+const PictureDescription = styled.h4`
+  font-family: 'PT Sans', sans-serif;
+  font-size: 16px;
+`
+
+const ProjectLink = styled(Link)`
+  margin-bottom: 20px;
+  align-self: flex-end;
 `
 
 const ProjectImage = styled.img`
@@ -247,14 +242,14 @@ const ProjectImage = styled.img`
 `
 
 const DirectionButton = styled.button`
-    width: 150px;
-    height: 35px;
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid black;
-    padding: 10px 0;
-    font-family: 'Archivo', sans-serif;
-    font-size: 15px;
+  width: 150px;
+  height: 35px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid black;
+  padding: 10px 0;
+  font-family: 'Archivo', sans-serif;
+  font-size: 15px;
 `
 
 export default ProjectDetailBigScreen

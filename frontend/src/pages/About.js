@@ -42,8 +42,9 @@ const About = () => {
                 key={image.url}
                 onMouseEnter={() => {setActiveImage(1)}}
                 onMouseLeave={() => {setActiveImage(0)}}
-              />)}
-            </>
+              />
+            )}
+          </>
           ))} 
           <AboutText>
             {aboutInformation.aboutText}
@@ -54,7 +55,7 @@ const About = () => {
   )
 }
 
-const MainContainer = styled.div`
+const MainContainer = styled.section`
   height: 100vh
 `
 
@@ -70,17 +71,6 @@ const ContentContainer = styled.div`
     }
 `
 
-const Image = styled.img`
-  height: 175px;
-  width: auto;
-    @media(min-width: 768px){
-      height: 250px;
-    }
-    @media(min-width: 1024px){
-      height: 250px;
-    }
-`
-
 const AboutText = styled.p`
   font-family: 'Heebo', sans-serif;
   font-size: 12px;
@@ -93,6 +83,17 @@ const AboutText = styled.p`
     @media(min-width: 1024px){
       width: 620px;
       font-size: 16px;
+    }
+`
+
+const Image = styled.img`
+  height: 175px;
+  width: auto;
+    @media(min-width: 768px){
+      height: 250px;
+    }
+    @media(min-width: 1024px){
+      height: 250px;
     }
 `
 

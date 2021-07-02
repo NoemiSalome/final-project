@@ -3,15 +3,7 @@
     padding: 0;
   }
   
-  body {
-    margin: 0;
-    /* font-family: 'Archivo', sans-serif;;
-    font-family: 'Heebo', sans-serif;*/
-
-    font-family: 'Archivo', sans-serif;
-
-    font-family: 'Heebo', sans-serif;
-    
+  body {    
     display: flex;
     justify-content: center;
     align-items: center;

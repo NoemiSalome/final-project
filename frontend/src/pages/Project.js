@@ -31,7 +31,8 @@ const Project = () => {
             alt,
             asset->{ url }
           }
-      }`)
+        }
+      `)
       .then((data) => setProjectData(data))
       .catch(console.error)
   }, [])
@@ -80,23 +81,13 @@ const Project = () => {
   )
 }
 
-const MainContainer = styled.div`
+const MainContainer = styled.section`
   display: flex;
   flex-direction: row;
   width: 100vw;
 `
 
-const ProjectLine = styled.div`
-  border-bottom: 1px solid black;
-  width: 30%;
-`
-
-const ProjectLink = styled(Link)`
-  color: black;
-  text-decoration: none;
-`
-
-const ProjectContainer = styled.div`
+const ProjectContainer = styled.section`
   margin-left: 30px;
   border-left: 1px solid black;
   padding: 80px 0;
@@ -110,13 +101,36 @@ const ProjectContainer = styled.div`
     }
 `
 
-const ProjectBox = styled.section`
+const PictureContainer = styled.section`
+  width: 55%;
+  display: flex;
+  justify-content: flex-start;
+`
+
+const ProjectLine = styled.div`
+  border-bottom: 1px solid black;
+  width: 30%;
+`
+
+const ProjectBox = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 70px;
   @media(min-width: 1024px){
     margin: 100px 0;
   }
+`
+
+const ImageContainer = styled.div`
+  display: none;
+  @media (min-width: 1024px) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 40vw;
+    position: fixed;
+    margin-top: 50px;
+  } 
 `
 
 const MainTitle = styled.h1`
@@ -132,16 +146,9 @@ const MainTitle = styled.h1`
     }
 `
 
-const ImageContainer = styled.div`
-  display: none;
-  @media (min-width: 1024px) {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 40vw;
-    position: fixed;
-    margin-top: 50px;
-  } 
+const ProjectLink = styled(Link)`
+  color: black;
+  text-decoration: none;
 `
 
 const ProjectImage = styled.img`
@@ -151,12 +158,6 @@ const ProjectImage = styled.img`
   max-width: 300px;
   max-height: 150px;
   margin: 5px;
-`
-
-const PictureContainer = styled.div`
-  width: 55%;
-  display: flex;
-  justify-content: flex-start;
 `
 
 export default Project

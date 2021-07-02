@@ -7,10 +7,9 @@ const ProjectDetail = () => {
   const [width, setWidth] = useState(window.innerWidth);
   const breakpoint = 1024;
 
-useEffect(() => {
+  useEffect(() => {
     const handleWindowResize = () => setWidth(window.innerWidth)
     window.addEventListener('resize', handleWindowResize);
-
     return () => window.removeEventListener('resize', handleWindowResize);
   }, []);
 

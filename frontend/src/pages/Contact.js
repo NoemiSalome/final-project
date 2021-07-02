@@ -19,6 +19,7 @@ const Contact = () => {
       .then((data) => setContactData(data[0]))
       .catch(console.error)
   }, [])
+
   return (
     <>
       <MainContainer>
@@ -41,12 +42,12 @@ const Contact = () => {
   )
 }
 
-const MainContainer = styled.div`
+const MainContainer = styled.section`
   height: 100vh;
   width: 100vw;
 `
 
-const ContentContainer = styled.div`
+const ContentContainer = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -75,9 +76,20 @@ const ContactContainer = styled.div`
     }
 `
 
-const Mail = styled.a`
-  text-decoration: none;
-  color: black;
+const DottedLineContainer = styled.div`
+  height: 150px;
+  border-left: 2px dotted black;
+    @media(min-width: 768px){
+      border-left: 2px dotted black;
+    }
+`
+
+const ProjectLine = styled.div`
+  border-top: 1px solid black;
+  width: 30%;
+    @media(min-width: 768px){
+      border-top: 2px solid black;
+    }
 `
 
 const GreetingContainer = styled.div`
@@ -88,20 +100,9 @@ const GreetingContainer = styled.div`
   height: 1px;
 `
 
-const DottedLineContainer = styled.div`
-  height: 150px;
-  border-left: 2px dotted black;
-    @media(min-width: 768px){
-      border-left: 2px dotted black;
-      }
-`
-
-const ProjectLine = styled.div`
-  border-top: 1px solid black;
-  width: 30%;
-    @media(min-width: 768px){
-      border-top: 2px solid black;
-      }
+const Mail = styled.a`
+  text-decoration: none;
+  color: black;
 `
 
 const MainTitle = styled.h1`

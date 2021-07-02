@@ -11,7 +11,6 @@ export const App = () => {
 
   return (
     <>
-    
       <BrowserRouter>
         <Switch>
           <Route component={Home} path='/' exact />
@@ -21,6 +20,6 @@ export const App = () => {
           <Route component={Contact} path='/contact' />
         </Switch>
       </BrowserRouter>
-</>
+    </>
   )
 }
