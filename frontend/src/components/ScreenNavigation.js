@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 import { NavLink } from 'react-router-dom'
-import {Modal} from 'react-responsive-modal'
+import { Modal } from 'react-responsive-modal'
 import 'react-responsive-modal/styles.css'
 
 const styles = {

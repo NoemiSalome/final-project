@@ -37,10 +37,7 @@ const ContentContainer = styled.section`
   margin: 0 20px;
   height: 80vh;
     @media(min-width: 1024px){
-      margin: 0 400px;
-    }
-    @media(min-width: 1350px){
-      margin: 0 400px;
+      margin-left: 400px;
     }
 `
 
@@ -49,7 +46,7 @@ const HomeTitle = styled.h1`
   font-size: 30px;
     @media(min-width: 768px){
       font-size: 40px;
-      margin: 0 0 20px 50px
+      margin: 0 0 20px 20px
     }
     @media(min-width: 1024px){
       font-size: 50px;
@@ -60,6 +57,10 @@ const HomeSubTitleContainer = styled.div`
   display: flex;
   align-items: end;
   flex-direction: column;
+  width: 290px;
+  @media(min-width: 768px){
+    width: 500px;
+  }
 `
 
 const HomeSubTitle = styled.h2`

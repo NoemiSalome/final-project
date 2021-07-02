@@ -96,7 +96,7 @@ const ProjectDetailBigScreen = () => {
               </>
             ))}
           </ImageContainer>
-            <DirectionButton onClick={UpButtonClick} className='rellax' data-rellax-speed='-7'>Take me UP.</DirectionButton>
+            <DirectionButton onClick={UpButtonClick} className='rellax' data-rellax-speed='-7.3'>Take me UP.</DirectionButton>
         </SecondHalfPageContainer>
       </MainContainer>
     </>
@@ -110,7 +110,7 @@ const MainContainer = styled.section`
 `
 
 const FirstHalfPageContainer = styled.section`
-	height: 100vh;
+	height: 80vh;
 	display: flex;
 	flex-direction:row;
 	justify-content: center;
@@ -156,6 +156,9 @@ const SingleLearningsBox = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 60px;
+    &:first-child{
+      margin-top: 70px;
+    }
     &:last-child{
       margin-bottom: 150px;
     }
@@ -172,6 +175,7 @@ const ImageContainer = styled.div`
   align-items: center;
   height: auto;
   width: auto;
+  margin-top: 150px;
 `
 
 const ImageBox = styled.div`
@@ -255,6 +259,7 @@ const DirectionButton = styled.button`
   padding: 10px 0;
   font-family: 'Archivo', sans-serif;
   font-size: 15px;
+  margin-top: 150px
 `
 
 export default ProjectDetailBigScreen
