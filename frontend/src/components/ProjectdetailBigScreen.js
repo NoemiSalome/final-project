@@ -157,7 +157,7 @@ const SingleLearningsBox = styled.div`
   align-items: center;
   margin-bottom: 60px;
     &:first-child{
-      margin-top: 70px;
+      margin-top: 80px;
     }
     &:last-child{
       margin-bottom: 150px;
