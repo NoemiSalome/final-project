@@ -24,7 +24,7 @@ Here you can see the Sanity Stuio (but not edit, so don't even think about it): 
 - react-responsive-modal for the navigation
 
 ## Biggest challenges
-Deleting a production file in sanity was not my smartest move in live. Figuring that out took quite a bit of time and restarting the whole connection to a new API was great practice, but unnecessary. At least I learnt my lesson. Other than that the project went by quite smoothly. I guess it is not too exciting codewise, but having a clear idea of the design and the app matching that design in the end, took quite some time. And not losing focus on the design along the way even though it sometime was not working the way I wanted it to, was hard sometimes. 
+Deleting a production file in sanity was not my smartest move in live. Figuring that out took quite a bit of time and restarting the whole connection to a new API was great practice, but unnecessary. At least I learnt my lesson. Other than that the project went by quite smoothly. Overall I am quite proud trying out sanity even though I had no idea in the beginning what a CMS is and that it is now up and running. Also having a pretty clear idea of how the design has to look and the app matching that design in the end, took quite some time. Not losing focus on the design along the way even though it sometime was not working the way I wanted it to, was hard sometimes. 
 
 ## Follow-up features
 From the strech goals I had the next feature, I'll implement is clicking on a Image in the ProjectdetailBigScreen-component to start a full-screen gallery of all images (with a zoom function). This is quite important to truly see the sketches or plans of the single projects.
